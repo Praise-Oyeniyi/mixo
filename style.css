@@ -74,7 +74,7 @@ header{
     height: 100vh;
     width: 25vw;
     top:4rem;
-    left:100vw;
+    right: -100%;
     background-color: #263340;
     padding: 1rem 1.5rem;
     transition: .1s all ease-in;   
@@ -94,12 +94,12 @@ header{
     font-size: 2rem;
     font-weight: 900;
 }
-.menu, .mobile-menu{
+.menu{
     width: fit-content;
     margin-left: auto;
 }
 .menu:hover .sidebar{
-    left: 70vw ;
+    right: -5rem;
 }
 nav{
     width: 33%;
@@ -325,9 +325,6 @@ form i {
 .info-slider-inner i{
     font-size: 8rem;
 }
-.d-hidden{
-    display: none !important;
-}
 
 @keyframes slide {
     0% {
@@ -421,26 +418,23 @@ form i {
     }
     .sidebar{
         position: fixed;
-        width: 80vw;   
+        width: 90vw; 
+        right: -5000rem !important;  
         padding: 2rem .5rem;
     }
-    .menu-outer .sidebar .active {
-        left:20vw;
+    .menu-outer .active {
+        right: -5rem !important;
+    }
+    .menu:hover .sidebar{
+        right: unset;
     }
     .sidebar .flex li{
         margin: .7rem;
         font-size: .85rem;
     }
-    /* .sidebar-open {
-        overflow: hidden !important;
+    .sidebar-open {
+        overflow: hidden;
         position: fixed;
         width: 100%;
-    } */
-    .hidden{
-        display: none !important;
-        pointer-events: none;
-    }
-    .d-hidden{
-        display: block !important;
     }
 }

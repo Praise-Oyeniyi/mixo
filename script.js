@@ -7,7 +7,7 @@ let currentIndex = 0;
 const totalSlides = slides.length;
 
 
-document.querySelector('.mobile-menu').addEventListener('click', function() {
+document.querySelector('.menu').addEventListener('click', function() {
     const sidebar = document.querySelector('.sidebar');
     const body = document.body;
     
