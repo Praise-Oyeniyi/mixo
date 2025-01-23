@@ -173,7 +173,7 @@ button, .form-item{
     background-color: transparent;
     font-size: 1.25rem;
     font-weight: 700;
-    width:fit-content !important;
+    width:fit-content;
     justify-content: center;
     color: #fff;
 }
@@ -235,6 +235,7 @@ button, .form-item{
 }
 .info-outer form{
     width: fit-content;
+    overflow: hidden;
     margin: 0 auto;
     column-gap: 2.5rem;
 }
@@ -435,6 +436,14 @@ form i {
     .sidebar-open {
         overflow: hidden;
         position: fixed;
+        width: 100vw;
+    }
+    form select{
+        max-width: 30%;
+        overflow-x: scroll;
+    }
+    .info-outer form{
         width: 100%;
+        column-gap: .8rem;
     }
 }
