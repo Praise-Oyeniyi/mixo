@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6, li{
+    font-family: "Poppins", serif;
+    font-style: normal;
+}
+body{
+    font-size: 1rem;
+    background: #263340 linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%));
+    color:#fff;
+    position: relative;
+    width: 100vw;
+    max-width: 1800px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+li, .logo h3{
+    padding: .1rem .5rem;
+    transition: .2s ease;
+    width: fit-content;
+}
+li:hover, .logo h3:hover{
+    background-color: rgba(0, 255, 255, 0.678);
+}
+.flex{
+    width: fit-content;
+    display: flex;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.items-center{
+    align-items: center;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+}
+.logo, .menu-outer{
+    width: 33%;
+}
+.header-outer{
+    background-color: #263340;
+    color: #fff;
+    padding: 1.3rem 0;
+}
+.btn-style{
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    pointer-events: auto;
+}
+.btn-style:hover{
+    background-color: rgba(0, 255, 255, 0.678);
+    transition: .2s ease-in-out;
+}
+
+.header-inner{
+    width:90%;
+    margin:0 auto;
+    align-items: center;
+    position: relative;
+}
+.sidebar{
+    position: absolute;
+    height: 100vh;
+    width: 25vw;
+    top:4rem;
+    left:100vw;
+    background-color: #263340;
+    padding: 1rem 1.5rem;
+    transition: .1s all ease-in;   
+}
+.sidebar .flex{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.sidebar .flex li{
+    margin: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.logo h3{
+    font-size: 2rem;
+    font-weight: 900;
+}
+.menu{
+    width: fit-content;
+    margin-left: auto;
+}
+.menu:hover .sidebar{
+    left: 70vw !important;
+}
+nav{
+    width: 33%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-inner  nav ul{
+    width: 100%;
+    margin: 0 auto;
+    column-gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-inner .fa-bars{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: end;
+}
+.hero-section{
+    text-align: center;
+    padding: 7rem 0 2rem 0 ;
+}
+.hero-section h5{
+    margin-top: .7rem;
+    font-weight: 500;
+}
+.hero-head, .info-head, .library-head, .faq-head{
+    font-size: 3.75rem;
+    text-transform: capitalize;
+    text-align:center;
+    color: #fff;
+    font-weight: 900;
+    padding-bottom: .3rem;
+}
+.hero-head{
+    text-shadow: 15px 15px 3rem rgba(255, 255, 255, 0.486);
+}
+.hero-desc{
+    text-shadow: 8px 8px 3rem rgba(255, 255, 255, 0.486);
+}
+.hero-desc, .sub-head, .faq-question h4{
+    font-size: 1.25rem;
+    text-align:center;
+    width: 50%;
+    margin: 1rem auto;
+    font-weight: 600;
+}
+.hero-icons{
+    max-width: fit-content;
+    /* color:#fff; */
+    margin: 1.5rem auto;
+    font-size: 1.8rem;
+}
+.hero-icons i {
+    margin: 0 1rem;
+}
+.border{
+    padding: .7rem 1.3rem;
+    border: 2px solid #fff;
+}
+.hero-section button{
+    margin:0 auto;
+}
+button, .form-item{
+    background-color: transparent;
+    font-size: 1.25rem;
+    font-weight: 700;
+    width:fit-content !important;
+    justify-content: center;
+    color: #fff;
+}
+.smaller{
+    font-size: 1.875rem;
+    text-align: center;
+}
+.faq-item .faq-question{
+    text-align: left;
+}
+.footer-inner{
+    align-items: flex-start; 
+    font-size:1rem;
+}
+.slideshow-outer, .mixo-video-outer{
+    width: 90%;
+    height:auto;
+    margin: 0 auto 7rem auto;
+    column-gap: 2rem;
+    overflow: hidden;
+    
+}
+.mixo-video-outer{
+    padding-top: 3rem;
+}
+.slideshow-inner, .mixo-video-inner{
+    max-width: 90%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto ;
+    background-color: #000;
+    height: 80vh;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slide {
+    min-width: 100%;
+    min-height:100%;
+    height: 100%;
+    object-fit: contain;
+}
+.slideshow-outer button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.slideshow-outer button i{
+    font-size: 2rem;
+}
+.info-outer{
+    padding: 3rem 0;
+    background:#263340;
+}
+.faq-inner, .aside-two{
+    padding: 3rem 0;
+    background:linear-gradient( 45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%) );
+}
+.info-outer form{
+    width: fit-content;
+    margin: 0 auto;
+    column-gap: 2.5rem;
+}
+form select{
+    color:#fff;
+}
+form .form-item-go{
+    padding: 1rem 1.3rem;
+}
+
+.info-slider{
+    height:12rem;
+    width:100%;
+    margin:3rem 0;
+}
+.library-outer{
+    background: linear-gradient( 45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%) );
+    padding: 3rem 0;
+}
+.library-outer .sub-head{
+    width:60%;
+}
+.faq-inner{
+    width: 100%;
+    padding: 0 5% 0 5%;
+}
+.faq-inner .faq-head{
+    padding-bottom: 1.5rem;
+}
+.faq-item {
+    margin-bottom: 1.5rem;
+    background-color: #263340;
+    transition: .3s all linear;
+}
+.faq-question{
+    padding:.5rem 0;
+}
+.faq-toggle{
+    display:none;
+    transition: .3s all linear;
+}
+.text-center{
+    text-align: center;
+}
+.aside-two button{
+    margin: 0 auto .8rem auto;
+}
+.footer-inner {
+    margin: 3rem auto;
+    width: 45%;
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+.footer-inner ul li{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.library-image{
+    height: 80vh;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center ;
+    
+}
+.library-image h1{
+    font-size: 6rem;
+    font-weight:900;
+    text-transform: uppercase;
+}
+form i {
+    font-size: 2rem;
+}
+.info-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.info-slider-inner {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5rem;
+    animation: slide 20s linear infinite;
+}
+.info-slider-inner i{
+    font-size: 8rem;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width:768px) {
+    .header-inner nav{
+        display: none;
+    }
+    .hero-head, .info-head, .library-head, .faq-head{
+        font-size: 2.3rem;
+        font-weight: 800;
+        padding-bottom: .2rem;
+    }
+    .hero-desc, .sub-head, .faq-question h4{
+        font-size: .875rem;
+        width: 90%;
+        font-weight: 500;
+    }
+    .mobile-small{
+        font-size: 1.3rem;
+    }
+    .slideshow-outer, .mixo-video-outer{
+        width: 93%;
+        margin: 0 auto 5rem auto;
+        column-gap: .5rem;
+    }
+    .slideshow-inner, .mixo-video-inner{
+        max-width: 100%;
+        width: 100%;
+        background-color: transparent;
+        height: auto;
+    }
+    .info-slider-inner i{
+        font-size: 4rem;
+    }
+    .info-slider{
+        height:auto;
+    }
+    .info-slider-inner {
+        column-gap: 3rem;
+    }
+    .footer-inner {
+        margin: 3rem auto;
+        width: 90%;
+        justify-content: space-between;
+        column-gap: 2rem;
+    }
+    footer .footer-inner ul li{
+        text-align: center;
+        font-size: .75rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    } 
+    .faq-inner, .aside-two{
+        padding: 3rem 0;
+    }
+    .slideshow-outer button i{
+        font-size: 1rem;
+    }
+    .header-outer{
+        padding: 1.3rem 0;
+    }
+    li, .logo h3{
+        padding: .1rem;
+    }
+    .library-image{
+        height: 50vh;
+        width: 95%;
+        
+    }
+    .library-image h1{
+        font-size: 3rem;
+    }
+    .mixo-video-inner img{
+        height: 30vh;
+        object-fit: cover;
+    }
+    .library-outer .sub-head{
+        width:90%;
+    }
+    .hero-section{
+        text-align: center;
+        padding: 3rem 0 2rem 0 ;
+    }
+    .sidebar{
+        position: fixed;
+        width: 80vw;   
+        padding: 2rem .5rem;
+    }
+    .menu-outer .active {
+        left:20vw;
+    }
+    .sidebar .flex li{
+        margin: .7rem;
+        font-size: .85rem;
+    }
+    .sidebar-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
