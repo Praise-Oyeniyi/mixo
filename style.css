@@ -18,9 +18,8 @@ body{
     color:#fff;
     position: relative;
     width: 100vw;
-    max-width: 1800px;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 li, .logo h3{
     padding: .1rem .5rem;
@@ -95,12 +94,12 @@ header{
     font-size: 2rem;
     font-weight: 900;
 }
-.menu{
+.menu, .mobile-menu{
     width: fit-content;
     margin-left: auto;
 }
 .menu:hover .sidebar{
-    left: 70vw !important;
+    left: 70vw ;
 }
 nav{
     width: 33%;
@@ -326,6 +325,9 @@ form i {
 .info-slider-inner i{
     font-size: 8rem;
 }
+.d-hidden{
+    display: none !important;
+}
 
 @keyframes slide {
     0% {
@@ -422,16 +424,23 @@ form i {
         width: 80vw;   
         padding: 2rem .5rem;
     }
-    .menu-outer .active {
+    .menu-outer .sidebar .active {
         left:20vw;
     }
     .sidebar .flex li{
         margin: .7rem;
         font-size: .85rem;
     }
-    .sidebar-open {
-        overflow: hidden;
+    /* .sidebar-open {
+        overflow: hidden !important;
         position: fixed;
         width: 100%;
+    } */
+    .hidden{
+        display: none !important;
+        pointer-events: none;
+    }
+    .d-hidden{
+        display: block !important;
     }
 }
