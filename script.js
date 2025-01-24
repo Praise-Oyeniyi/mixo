@@ -95,7 +95,7 @@ let currentColorIndex = localStorage.getItem('backgroundColorIndex')
     ? parseInt(localStorage.getItem('backgroundColorIndex')) 
     : 0;
 
-document.body.style.background = colors[currentColorIndex];
+document.body.style.background = .setProperty('--body-bg-primary', primaryColors[currentColorIndex]);
 document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
 
 button.addEventListener('click', () => {

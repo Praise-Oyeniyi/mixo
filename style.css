@@ -1,5 +1,5 @@
 :root{
-    --body-bg-primary:#2664330 linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%));
+    --body-bg-primary: linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%));
     --primary:#264330;
     --secondary:#20e4b4;
     --tetiary:#fff;
