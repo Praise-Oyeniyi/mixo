@@ -74,35 +74,55 @@ document.querySelector('.mixo-video-inner').addEventListener('click', function()
     `;
 });
 
-// const button = document.querySelector('.f-icon-pallete');
-// const colors = [
-//     'var(--body-bg-primary)',
-//     'var(--secondary)',
-//     'var(--tetiary)',
-//     'var(--black)',
-//     'var(--pink)'
-// ];
-// const primaryColors = [
-//     '#263340',
-//     '#20e4b4',
-//     '#ffffff',
-//     '#000000',
-//     '#e04270'
-// ];
 
+const colorButton = document.querySelector('.f-icon-pallete');
+const root = document.documentElement;
 
-// let currentColorIndex = localStorage.getItem('backgroundColorIndex') 
-//     ? parseInt(localStorage.getItem('backgroundColorIndex')) 
-//     : 0;
+const colors = [
+    '--body-bg-primary', // Added initial background
+    '--primary',          // Added initial primary color
+    '--secondary', 
+    '--tetiary', 
+    '--black', 
+    '--pink'
+];
 
-// document.body.style.background = colors[currentColorIndex];
-// document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+let currentColorIndex = 0;
 
-// button.addEventListener('click', () => {
-//     currentColorIndex = (currentColorIndex + 1) % colors.length;
-//     document.body.style.background = colors[currentColorIndex];
-//     document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+colorButton.addEventListener('click', () => {
+    // Get next color in sequence
+    const currentColor = colors[currentColorIndex];
+    const newPrimaryColor = getComputedStyle(root).getPropertyValue(currentColor).trim();
+    
+    // Set the new primary color
+    root.style.setProperty('--primary', newPrimaryColor);
+    localStorage.setItem('customPrimaryColor', newPrimaryColor);
+    
+    // Update page background with a gradient using the new primary color
+    const newBackground = `linear-gradient(45deg, ${newPrimaryColor}, ${newPrimaryColor})`;
+    root.style.setProperty('--body-bg-primary', newBackground);
+    localStorage.setItem('customBackgroundColor', newBackground);
+    
+    // Move to next color index, wrapping around to start if needed
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    localStorage.setItem('currentColorIndex', currentColorIndex);
+});
 
-//     localStorage.setItem('backgroundColorIndex', currentColorIndex);
-//     localStorage.setItem('primaryColorIndex', currentColorIndex);
-// });
+// Restore state on page load
+window.addEventListener('load', () => {
+    const savedPrimaryColor = localStorage.getItem('customPrimaryColor');
+    const savedBackgroundColor = localStorage.getItem('customBackgroundColor');
+    const savedColorIndex = localStorage.getItem('currentColorIndex');
+    
+    if (savedPrimaryColor) {
+        root.style.setProperty('--primary', savedPrimaryColor);
+    }
+    
+    if (savedBackgroundColor) {
+        root.style.setProperty('--body-bg-primary', savedBackgroundColor);
+    }
+    
+    if (savedColorIndex !== null) {
+        currentColorIndex = parseInt(savedColorIndex);
+    }
+});

@@ -725,7 +725,7 @@ form i {
         font-size: .75rem;
     }
     .items-box img{
-        height: 3rem;
+        width: 3rem;
     }
     .menu .search{
         font-size: 1rem;
