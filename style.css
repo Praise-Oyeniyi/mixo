@@ -58,8 +58,8 @@ header{
 }
 .logo img{
     object-fit: contain;
-    height: 2rem;
-    width: 100%;
+    height: auto;
+    width: 10rem;
 }
 .header-outer{
     background-color: #263340;
@@ -133,10 +133,7 @@ header{
     font-size: 1.5rem;
     font-weight: 400;
 }
-.logo h3{
-    font-size: 2rem;
-    font-weight: 900;
-}
+
 .menu{
     width: fit-content;
     margin-left: auto;
@@ -443,6 +440,10 @@ form i {
 .f-icon:hover{
     background-color: #20e4bd;
 }
+.items-box img{
+    filter: invert(100%) brightness(200%);
+    width: 6rem;
+}
 
 @keyframes slide {
     0% {
@@ -517,7 +518,7 @@ form i {
     .header-outer{
         padding: 1.3rem 0;
     }
-    li, .logo h3{
+    li{
         padding: .1rem;
     }
     .library-image{
@@ -585,5 +586,16 @@ form i {
     }
     .items-box img{
         height: 3rem;
+    }
+    .menu .search{
+        font-size: 1rem;
+        opacity: 1;
+        visibility: visible; 
+        right: 3.5rem;
+    }
+    .logo img{
+        position: relative;
+        left: -1.5rem;
+        width: 6rem;
     }
 }
