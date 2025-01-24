@@ -1,3 +1,12 @@
+:root{
+    --body-bg-primary:#2664330 linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%));
+    --primary:#264330;
+    --secondary:#20e4b4;
+    --tetiary:#fff;
+    --black:#000;
+    --pink:#e04270;
+}
+
 @font-face {
     font-family: 'MyWebFont';
     src: url('font/MIXOfont.ttf') format('truetype'), ;
@@ -28,7 +37,7 @@ h1, h2, h3, h4, h5, h6, li{
 }
 body{
     font-size: 1rem;
-    background: #263340 linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%));
+    background: var(--body-bg-primary);
     color:#fff;
     position: relative;
     width: 100vw;
@@ -72,7 +81,7 @@ header{
     left: -2rem;
 }
 .header-outer{
-    background-color: #263340;
+    background-color: var(--primary);
     color: #fff;
     padding: .7rem 0;
 }
@@ -86,7 +95,7 @@ header{
 }
 .btn-style:hover {
     border: 2px solid #20e4bd;
-    color: #263340;
+    color: var(--primary);
     background-color: #20e4bd;
 }
 .btn-style-foot::after {
@@ -101,7 +110,58 @@ header{
     animation: btnslide 1.5s linear 3s infinite;
     width: 50px;
 }
+.ham-outer{
+    padding: .5rem 1rem;
+}
+.ham1, .ham2, .ham3, .ham4{
+    height: 3px;
+    margin-bottom: .25rem;
+    background: #fff;
+    margin-left:auto ;
+    transition: width 0.5s ease;
+}
+.ham1{
+    width:1.5rem ;
+}
+.ham2{
+    width:2rem ;
+}
+.ham3{
+    width:1.75rem ;
+}
+.ham4{
+    width:2.25rem ;
+}
 
+.ham-outer:hover .ham1, .menu:hover .ham1 {
+    animation: widthChange1 0.5s infinite alternate;
+ }
+ .ham-outer:hover .ham2, .menu:hover .ham2 {
+    animation: widthChange2 0.5s infinite alternate;
+ }
+ .ham-outer:hover .ham3, .menu:hover .ham3 {
+    animation: widthChange3 0.5s infinite alternate;
+ }
+ .ham-outer:hover .ham4, .menu:hover .ham4 {
+    animation: widthChange4 0.5s infinite alternate;
+ }
+ 
+ @keyframes widthChange1 {
+    0% { width: 1.5rem; }
+    100% { width: 1.65rem; }
+ }
+ @keyframes widthChange2 {
+    0% { width: 2.15rem; }
+    100% { width:2rem ; }
+ }
+ @keyframes widthChange3 {
+    0% { width: 1.75rem; }
+    100% { width: 1.85rem; }
+ }
+ @keyframes widthChange4 {
+    0% { width: 2.35rem; }
+    100% { width: 2.25rem; }
+ }
 
 .header-inner{
     width:90%;
@@ -117,8 +177,9 @@ header{
     right: -100%;
     opacity: 0;
     visibility: hidden;
-    background-color: #263340;
-    padding: 3rem 1.5rem;
+    display: none;
+    background-color: var(--primary);
+    padding: 3rem 1rem;
     transition: .3s all ease-in;   
 }
 .menu .search{
@@ -128,6 +189,7 @@ header{
     font-size: 1.3rem;
     right: 5rem;
     opacity: 0;
+    pointer-events: none;
     visibility: hidden;
     transition: .3s all ease-in;   
 }
@@ -152,11 +214,13 @@ header{
     right: -5rem;
     opacity: 1;
     visibility: visible; 
+    display: block;
     transition: .3s all ease;   
 }
 .menu:hover .search{
     opacity: 1;
-    visibility: visible;   
+    visibility: visible;  
+    pointer-events: auto; 
 }
 nav{
     width: 33%;
@@ -184,7 +248,7 @@ nav{
 .hero-section{
     text-align: center;
     padding: 5rem 0 2rem 0 ;
-    background-color: #263340;
+    background-color: var(--primary);
     overflow-y: hidden;
 }
 .hero-section p{
@@ -270,13 +334,16 @@ button, .form-item{
 }
 .mixo-video-inner{
     position: relative;
+    width: 80%;
+    height: 87vh;
 }
 .vid-play{
-    font-size: 4rem;
+    font-size: 3rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 10px #000;
 }
 .slideshow-inner{
     box-shadow: 0 0 15rem 0px hsl(210, 25%, 52%);
@@ -301,12 +368,12 @@ button, .form-item{
 }
 .info-outer{
     padding: 3rem 0;
-    background:#263340;
+    background:var(--primary);
     z-index: 99;
 }
 .faq-inner, .aside-two{
     padding: 3rem 0;
-    background:linear-gradient( 45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%) );
+    background:var(--body-bg-primary);
 }
 .info-outer form{
     width: fit-content;
@@ -327,7 +394,7 @@ form .form-item-go{
     margin:3rem 0;
 }
 .library-outer{
-    background: linear-gradient( 45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%) );
+    background: var(--body-bg-primary);
     padding: 3rem 0;
 }
 .library-outer .sub-head{
@@ -342,7 +409,7 @@ form .form-item-go{
 }
 .faq-item {
     margin-bottom: 1.5rem;
-    background-color: #263340;
+    background-color: var(--primary);
     transition: .3s all linear;
     
 }
@@ -450,10 +517,10 @@ form i {
     overflow: hidden !important;
 }
 .f-icon{
-    font-size: 1rem;
-    padding: .58rem .5rem;
+    font-size: 1.5rem;
+    padding: .5rem .42rem;
     border-radius: 50%;
-    color: #263340;
+    color: var(--primary);
     background-color: #fff;
     transition: .2s ease-in;
 }
@@ -464,13 +531,47 @@ form i {
     filter: invert(100%) brightness(200%);
     width: 6rem;
     cursor: pointer;
+    overflow: hidden;
 }
+.info-slider-inner .circle{
+    filter: invert(0) ;
+   background-color: #20e4bd;
+   clip-path: circle();
+}
+.info-slider-inner .poly{
+    filter: invert(0) ;
+    background-color: #20e4bd;
+    clip-path: polygon(
+        50% 0%, 
+        100% 25%, 
+        100% 75%, 
+        50% 100%, 
+        0% 75%, 
+        0% 25%
+    );
+ }
 .footer-outer button{
     outline: none;
     border: none;
 }
 .menu, header li, footer li {
     cursor: pointer;
+}
+.sidebar .social-icons{
+    position: relative;
+    bottom: 8rem !important;
+    left: 1rem;
+    
+}
+.social-icons i{
+    padding: .5rem;
+    color: #fff;
+    font-size: 2.5rem;
+    transform: all .3s ease;
+}
+.social-icons i:hover{
+    background-color: #20e4bd;
+    transform: all .3s ease;
 }
 .items-box h4, p{
     font-weight: 500;

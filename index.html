@@ -29,15 +29,25 @@
 
             <div class="menu-outer">
                 <div class="menu">
-                    <i class="fa-solid fa-bars"></i>
+                    <div class="ham-outer">
+                        <div class="ham1"></div>
+                        <div class="ham2"></div>
+                        <div class="ham3"></div>
+                        <div class="ham4"></div>
+
+                    </div>
                     <i class="fa-solid fa-magnifying-glass search mobile-hidden"></i>
-                    <div class="sidebar">
+                    <div class="sidebar" id="sidebar">
                         <ul class="flex ">
                             <li>Guides</li>
                             <li>chat</li>
                             <li>profile</li>
                             <li>download</li>
                         </ul>
+                        <div class="social-icons">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,11 +82,11 @@
                 </button>
                     <div class="slideshow-inner ">
                         <div class="slider mobile-hidde">
-                            <img src="https://www.mixo.dev/assets/website/app-screenshot-2-desk-sm.png" alt="Slide 1" class="slide"/>
-                            <img src="https://www.mixo.dev/assets/website/app-screenshot-3-desk-sm.webp" alt="Slide 2" class="slide"/>
-                            <img src="https://www.mixo.dev/assets/website/app-screenshot-4-desk-sm.webp" alt="Slide 3" class="slide"/>
-                            <img src="https://www.mixo.dev/assets/website/app-screenshot-5-desk-sm.webp" alt="Slide 4" class="slide"/>
-                            <img src="https://www.mixo.dev/assets/website/computer-cropped-desk-sm.webp" alt="Slide 4" class="slide"/>
+                            <img src="https://www.mixo.dev/assets/website/computer-cropped-desk-sm.webp" alt="Slide 1" class="slide"/>
+                            <img src="https://www.mixo.dev/assets/website/app-screenshot-2-desk-sm.png" alt="Slide 2" class="slide"/>
+                            <img src="https://www.mixo.dev/assets/website/app-screenshot-3-desk-sm.webp" alt="Slide 3" class="slide"/>
+                            <img src="https://www.mixo.dev/assets/website/app-screenshot-4-desk-sm.webp" alt="Slide 4" class="slide"/>
+                            <img src="https://www.mixo.dev/assets/website/app-screenshot-5-desk-sm.webp" alt="Slide 5" class="slide"/>
                         </div>
                         <!-- <div class="slider desk-hidden">
                             <img src="https://www.mixo.dev/assets/website/app-screenshot-2-mobile-sm.webp" alt="Slide 1" class="slide"/>
@@ -129,17 +139,17 @@
                         <img src="/icons/itunes.svg" alt=""/>
                         <h4>Itunes</h4>
                     </div>
-                    <div class="rekordbox items-box">
-                        <img src="/icons/rekordbox.svg" alt=""/>
+                    <div class="rekordbox items-box invert">
+                        <img src="/icons/rekordbox.svg" class="poly" alt=""/>
                         <h4>RekordBox</h4>
+                    </div>
+                    <div class="traktor items-box invert">
+                        <img src="/icons/traktor.svg" class="circle" alt=""/>
+                        <h4>Traktor</h4>
                     </div>
                     <div class="serato items-box">
                         <img src="/icons/serato.svg" alt=""/>
                         <h4>Serato</h4>
-                    </div>
-                    <div class="traktor items-box">
-                        <img src="/icons/traktor.svg" alt=""/>
-                        <h4>Traktor</h4>
                     </div>
                     <div class="ultramixer items-box">
                         <img src="/icons/ultramixer.svg" alt=""/>
@@ -173,17 +183,17 @@
                         <img src="/icons/itunes.svg" alt=""/>
                         <h4>Itunes</h4>
                     </div>
-                    <div class="rekordbox items-box">
-                        <img src="/icons/rekordbox.svg" alt=""/>
+                    <div class="rekordbox items-box invert">
+                        <img src="/icons/rekordbox.svg" class="poly" alt=""/>
                         <h4>RekordBox</h4>
+                    </div>
+                    <div class="traktor items-box invert">
+                        <img src="/icons/traktor.svg" class="circle" alt=""/>
+                        <h4>Traktor</h4>
                     </div>
                     <div class="serato items-box">
                         <img src="/icons/serato.svg" alt=""/>
                         <h4>Serato</h4>
-                    </div>
-                    <div class="traktor items-box">
-                        <img src="/icons/traktor.svg" alt=""/>
-                        <h4>Traktor</h4>
                     </div>
                     <div class="ultramixer items-box">
                         <img src="/icons/ultramixer.svg" alt=""/>
@@ -199,10 +209,26 @@
             <form action="#" method="post" class="items-center justify-between flex">
                 <select name="Rekordbox" id="" class="form-item border">
                     <option value="Rekordbox">Rekordbox</option>
+                    <option value="Rekordbox">Traktor</option>
+                    <option value="Rekordbox">Ultramixer</option>
+                    <option value="Rekordbox">Virtual DJ</option>
+                    <option value="Rekordbox">Cross DJ</option>
+                    <option value="Rekordbox">DEX 3</option>
+                    <option value="Rekordbox">Digital DJ 2 </option>
+                    <option value="Rekordbox">Engine Prime</option>
+                    <option value="Rekordbox">iTunes</option>
                 </select>
                 <i class="fa-solid fa-angles-right"></i>
                 <select name="Traktor" id="" class="form-item border">
                     <option value="Traktor">Traktor</option>
+                    <option value="Rekordbox">Rekordbox</option>
+                    <option value="Rekordbox">Ultramixer</option>
+                    <option value="Rekordbox">Virtual DJ</option>
+                    <option value="Rekordbox">Cross DJ</option>
+                    <option value="Rekordbox">DEX 3</option>
+                    <option value="Rekordbox">Digital DJ 2 </option>
+                    <option value="Rekordbox">Engine Prime</option>
+                    <option value="Rekordbox">iTunes</option>
                 </select>
                 <button type="submit" class="form-item form-item-go border btn-style">Go</button>
             </form>
@@ -351,7 +377,7 @@
                 </ul>
             </div>
             <div class="footer-icons">
-                <button><i class="fa-solid fa-fill-drip f-icon"></i></button>
+                <button><i class="fa-solid fa-fill-drip f-icon f-icon-pallete"></i></button>
                 <button><i class="fa-regular fa-comments f-icon"></i></button>  
             </div>
         </footer>

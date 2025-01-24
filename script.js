@@ -53,7 +53,6 @@ faqItems.forEach(item => {
     item.addEventListener('click', () => {
         const toggleContent = item.querySelector('.faq-toggle');
         
-        // If it's currently visible, hide it; if hidden, show it
         toggleContent.style.display = 
             toggleContent.style.display === 'block' ? 'none' : 'block';
     });
@@ -73,4 +72,37 @@ document.querySelector('.mixo-video-inner').addEventListener('click', function()
             allowfullscreen
         ></iframe>
     `;
+});
+
+const button = document.querySelector('.f-icon-pallete');
+const colors = [
+    'var(--body-bg-primary)',
+    'var(--secondary)',
+    'var(--tetiary)',
+    'var(--black)',
+    'var(--pink)'
+];
+const primaryColors = [
+    '#263340',
+    '#20e4b4',
+    '#ffffff',
+    '#000000',
+    '#e04270'
+];
+
+
+let currentColorIndex = localStorage.getItem('backgroundColorIndex') 
+    ? parseInt(localStorage.getItem('backgroundColorIndex')) 
+    : 0;
+
+document.body.style.background = colors[currentColorIndex];
+document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+
+button.addEventListener('click', () => {
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    document.body.style.background = colors[currentColorIndex];
+    document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+
+    localStorage.setItem('backgroundColorIndex', currentColorIndex);
+    localStorage.setItem('primaryColorIndex', currentColorIndex);
 });
