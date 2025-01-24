@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('font/MIXOfont.ttf') format('truetype'), ;
+         /* url('font/MIXOfont.woff2') format('woff2'), 
+         url('font/MIXOfont.woff') format('woff');    */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -9,8 +16,9 @@
     list-style: none;
 }
 h1, h2, h3, h4, h5, h6, li{
-    font-family: "Poppins", serif;
+    font-family: "MyWebFont", serif;
     font-style: normal;
+    font-weight: 400;
 }
 body{
     font-size: 1rem;
@@ -21,13 +29,14 @@ body{
     margin: 0 auto;
     overflow-x: hidden !important;
 }
-li, .logo h3{
+li, .logo{
     padding: .1rem .5rem;
     transition: .2s ease;
     width: fit-content;
+    letter-spacing: 0.05rem;
 }
-li:hover, .logo h3:hover{
-    background-color: rgba(0, 255, 255, 0.678);
+li:hover, .logo:hover{
+    background-color: #20e4bd;
 }
 .flex{
     width: fit-content;
@@ -47,22 +56,43 @@ header{
 .logo, .menu-outer{
     width: 33%;
 }
+.logo img{
+    object-fit: contain;
+    height: 2rem;
+    width: 100%;
+}
 .header-outer{
     background-color: #263340;
     color: #fff;
-    padding: 1.3rem 0;
+    padding: .7rem 0;
 }
-.btn-style{
+.btn-style {
     position: relative;
     z-index: 99;
     overflow: hidden;
     pointer-events: auto;
 }
-.btn-style:hover{
-    background-color: rgba(0, 255, 255, 0.678);
-    transition: .2s ease-in-out;
+
+.btn-style::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #20e4bd;
+    transition: left 0.2s linear;
+    z-index: -1;
 }
 
+.btn-style:hover::before {
+    left: 0;
+}
+
+.btn-style:hover {
+    border: 2px solid #20e4bd;
+    color: #263340;
+}
 .header-inner{
     width:90%;
     margin:0 auto;
@@ -73,22 +103,35 @@ header{
     position: absolute;
     height: 100vh;
     width: 25vw;
-    top:4rem;
+    top:2.2rem;
     right: -100%;
+    opacity: 0;
+    visibility: hidden;
     background-color: #263340;
-    padding: 1rem 1.5rem;
-    transition: .1s all ease-in;   
+    padding: 3rem 1.5rem;
+    transition: .3s all ease-in;   
+}
+.menu .search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    right: 5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s all ease-in;   
 }
 .sidebar .flex{
     height: 100%;
     width: 100%;
     flex-direction: column;
+    
 }
 .sidebar .flex li{
     margin: 1rem;
     text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 .logo h3{
     font-size: 2rem;
@@ -98,8 +141,15 @@ header{
     width: fit-content;
     margin-left: auto;
 }
-.menu:hover .sidebar{
+.menu:hover .sidebar, .sidebar:hover{
     right: -5rem;
+    opacity: 1;
+    visibility: visible; 
+    transition: .3s all ease;   
+}
+.menu:hover .search{
+    opacity: 1;
+    visibility: visible;   
 }
 nav{
     width: 33%;
@@ -112,46 +162,46 @@ nav{
 .header-inner  nav ul{
     width: 100%;
     margin: 0 auto;
-    column-gap: 1.5rem;
-    font-size: 1rem;
-    font-weight: 700;
+    column-gap: .8rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     text-transform: uppercase;
     justify-content: space-between;
     align-items: center;
 }
 .header-inner .fa-bars{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: end;
 }
 .hero-section{
     text-align: center;
-    padding: 7rem 0 2rem 0 ;
+    padding: 5rem 0 2rem 0 ;
+    background-color: #263340;
+    overflow-y: hidden;
 }
 .hero-section h5{
     margin-top: .7rem;
-    font-weight: 500;
+    font-weight: 300;
 }
 .hero-head, .info-head, .library-head, .faq-head{
     font-size: 3.75rem;
     text-transform: capitalize;
     text-align:center;
     color: #fff;
-    font-weight: 900;
+    font-weight: 400;
     padding-bottom: .3rem;
 }
 .hero-head{
-    text-shadow: 15px 15px 3rem rgba(255, 255, 255, 0.486);
+    text-shadow: 3px 3px 3rem rgba(255, 255, 255, 0.274);
 }
-.hero-desc{
-    text-shadow: 8px 8px 3rem rgba(255, 255, 255, 0.486);
-}
+
 .hero-desc, .sub-head, .faq-question h4{
     font-size: 1.25rem;
     text-align:center;
     width: 50%;
     margin: 1rem auto;
-    font-weight: 600;
+    font-weight: 400;
 }
 .hero-icons{
     max-width: fit-content;
@@ -179,6 +229,7 @@ button, .form-item{
 }
 .smaller{
     font-size: 1.875rem;
+    font-weight: 400;
     text-align: center;
 }
 .faq-item .faq-question{
@@ -190,10 +241,10 @@ button, .form-item{
 }
 .slideshow-outer, .mixo-video-outer{
     width: 90%;
-    height:auto;
-    margin: 0 auto 7rem auto;
+    height:fit-content;
+    margin: 2rem auto 6rem auto;
     column-gap: 2rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 .mixo-video-outer{
@@ -206,6 +257,19 @@ button, .form-item{
     margin: 0 auto ;
     background-color: #000;
     height: 80vh;
+}
+.mixo-video-inner{
+    position: relative;
+}
+.vid-play{
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slideshow-inner{
+    box-shadow: 0 0 15rem 0px rgba(255, 255, 255, 0.274);
 }
 .slider {
     display: flex;
@@ -228,6 +292,7 @@ button, .form-item{
 .info-outer{
     padding: 3rem 0;
     background:#263340;
+    z-index: 99;
 }
 .faq-inner, .aside-two{
     padding: 3rem 0;
@@ -273,9 +338,20 @@ form .form-item-go{
 .faq-question{
     padding:.5rem 0;
 }
-.faq-toggle{
+.faq-item .faq-toggle{
     display:none;
     transition: .3s all linear;
+}
+#faq-item .faq-toggle, #faq-item li{
+    color: gray;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#faq-item li{
+    padding: 0.3rem 0;
+    margin-left: 1.3rem;
+    list-style: circle;
 }
 .text-center{
     text-align: center;
@@ -284,17 +360,19 @@ form .form-item-go{
     margin: 0 auto .8rem auto;
 }
 .footer-inner {
-    margin: 3rem auto;
+    margin: 4.5rem auto 3rem auto;
     width: 45%;
     justify-content: space-between;
     column-gap: 2rem;
 }
 .footer-inner ul li{
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem !important;
+    margin: 0 auto;
 }
+
 .library-image{
     height: 80vh;
     width: 80%;
@@ -326,6 +404,45 @@ form i {
 .info-slider-inner i{
     font-size: 8rem;
 }
+.desk-hidden{
+    display: none;
+}
+.items-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.items-box h4{
+    color: #fff;
+    font-size: .875rem;
+    text-align: center;
+}
+.footer-outer{
+    position: relative;
+}
+.footer-icons{
+    position: fixed;
+    display: flex;
+    width: 95%;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    align-items: center;
+}
+.f-icon{
+    font-size: 1rem;
+    padding: .58rem .5rem;
+    border-radius: 50%;
+    color: #263340;
+    background-color: #fff;
+    transition: .2s ease-in;
+}
+.f-icon:hover{
+    background-color: #20e4bd;
+}
 
 @keyframes slide {
     0% {
@@ -337,25 +454,30 @@ form i {
 }
 
 @media (max-width:768px) {
+    .desk-hidden{
+        display: flex !important;
+    }
     .header-inner nav{
         display: none;
     }
     .hero-head, .info-head, .library-head, .faq-head{
-        font-size: 2.3rem;
-        font-weight: 800;
+        font-size: 2rem;
+        width: 90%;
+        margin: 0 auto;
         padding-bottom: .2rem;
     }
     .hero-desc, .sub-head, .faq-question h4{
         font-size: .875rem;
         width: 90%;
-        font-weight: 500;
+        font-weight: 100;
+        line-height: 1.5rem;
     }
     .mobile-small{
         font-size: 1.3rem;
     }
     .slideshow-outer, .mixo-video-outer{
         width: 93%;
-        margin: 0 auto 5rem auto;
+        margin: 2rem auto 3.5rem auto;
         column-gap: .5rem;
     }
     .slideshow-inner, .mixo-video-inner{
@@ -383,7 +505,7 @@ form i {
         text-align: center;
         font-size: .75rem;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 100;
         margin-bottom: 1rem;
     } 
     .faq-inner, .aside-two{
@@ -420,18 +542,21 @@ form i {
     .sidebar{
         position: fixed;
         width: 90vw; 
-        right: -5000rem !important;  
+        right: -5000rem !important; 
         padding: 2rem .5rem;
+        margin-top: 3rem;
     }
     .menu-outer .active {
         right: -5rem !important;
+        opacity: 1;
+        visibility: visible; 
     }
     .menu:hover .sidebar{
         right: unset;
     }
     .sidebar .flex li{
         margin: .7rem;
-        font-size: .85rem;
+        font-size: 1rem;
     }
     .sidebar-open {
         overflow: hidden;
@@ -442,8 +567,23 @@ form i {
         max-width: 30%;
         overflow-x: scroll;
     }
+    form select option .border{
+        padding: .1rem auto !important;
+    }
     .info-outer form{
         width: 100%;
         column-gap: .8rem;
+    }
+    .footer-icons{
+        width: 90%;
+    }
+    .items-box{
+        row-gap: .5rem;
+    }
+    .items-box h4{
+        font-size: .75rem;
+    }
+    .items-box img{
+        height: 3rem;
     }
 }

@@ -58,3 +58,19 @@ faqItems.forEach(item => {
             toggleContent.style.display === 'block' ? 'none' : 'block';
     });
 });
+
+document.querySelector('.mixo-video-inner').addEventListener('click', function() {
+    const videoContainer = this;
+    const videoId = 'Lvz8Uuvlrw0'; 
+    
+    videoContainer.innerHTML = `
+        <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen
+        ></iframe>
+    `;
+});
