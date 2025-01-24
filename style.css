@@ -1,10 +1,16 @@
 @font-face {
     font-family: 'MyWebFont';
     src: url('font/MIXOfont.ttf') format('truetype'), ;
-         /* url('font/MIXOfont.woff2') format('woff2'), 
-         url('font/MIXOfont.woff') format('woff');    */
+         /* url('font/MIXOfont.woff') format('woff');    */
     font-weight: normal;
     font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('font/Nunito-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-display: swap; 
 }
 *{
@@ -18,7 +24,7 @@
 h1, h2, h3, h4, h5, h6, li{
     font-family: "MyWebFont", serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
 }
 body{
     font-size: 1rem;
@@ -36,7 +42,7 @@ li, .logo{
     width: fit-content;
     letter-spacing: 0.05rem;
 }
-li:hover, .logo:hover{
+li:hover, .logo img:hover{
     background-color: #20e4bd;
 }
 .flex{
@@ -54,13 +60,16 @@ header{
     top: 0;
     z-index: 9999999;
 }
+
 .logo, .menu-outer{
     width: 33%;
 }
 .logo img{
+    position: relative;
     object-fit: contain;
     height: auto;
     width: 10rem;
+    left: -2rem;
 }
 .header-outer{
     background-color: #263340;
@@ -72,28 +81,28 @@ header{
     z-index: 99;
     overflow: hidden;
     pointer-events: auto;
+    transition: all .55s ease;
+    font-weight: 500;
 }
-
-.btn-style::before {
-    content: '';
-    position: absolute;
-    left: -100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #20e4bd;
-    transition: left 0.2s linear;
-    z-index: -1;
-}
-
-.btn-style:hover::before {
-    left: 0;
-}
-
 .btn-style:hover {
     border: 2px solid #20e4bd;
     color: #263340;
+    background-color: #20e4bd;
 }
+.btn-style-foot::after {
+    background-color: #20e4bd;
+    content: "";
+    height: 200px;
+    left: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -10rem;
+    transform: rotate(35deg);
+    animation: btnslide 1.5s linear 3s infinite;
+    width: 50px;
+}
+
+
 .header-inner{
     width:90%;
     margin:0 auto;
@@ -178,7 +187,7 @@ nav{
     background-color: #263340;
     overflow-y: hidden;
 }
-.hero-section h5{
+.hero-section p{
     margin-top: .7rem;
     font-weight: 300;
 }
@@ -191,7 +200,8 @@ nav{
     padding-bottom: .3rem;
 }
 .hero-head{
-    text-shadow: 3px 3px 3rem rgba(255, 255, 255, 0.274);
+    text-shadow: 10px 0px 37px rgba(255, 255, 255, 0.123);
+    filter: drop-shadow(10px 0px 37px rgba(255, 255, 255, 0.274))
 }
 
 .hero-desc, .sub-head, .faq-question h4{
@@ -209,6 +219,7 @@ nav{
 }
 .hero-icons i {
     margin: 0 1rem;
+    cursor: pointer;
 }
 .border{
     padding: .7rem 1.3rem;
@@ -224,6 +235,7 @@ button, .form-item{
     width:fit-content;
     justify-content: center;
     color: #fff;
+    cursor: pointer;
 }
 .smaller{
     font-size: 1.875rem;
@@ -267,7 +279,7 @@ button, .form-item{
     transform: translate(-50%, -50%);
 }
 .slideshow-inner{
-    box-shadow: 0 0 15rem 0px rgba(255, 255, 255, 0.274);
+    box-shadow: 0 0 15rem 0px hsl(210, 25%, 52%);
 }
 .slider {
     display: flex;
@@ -332,16 +344,18 @@ form .form-item-go{
     margin-bottom: 1.5rem;
     background-color: #263340;
     transition: .3s all linear;
+    
 }
 .faq-question{
     padding:.5rem 0;
+    cursor: pointer;
 }
 .faq-item .faq-toggle{
     display:none;
     transition: .3s all linear;
 }
 #faq-item .faq-toggle, #faq-item li{
-    color: gray;
+    color: rgb(168, 168, 168);
     font-size: 1rem;
     font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;
@@ -449,8 +463,19 @@ form i {
 .items-box img{
     filter: invert(100%) brightness(200%);
     width: 6rem;
+    cursor: pointer;
 }
-
+.footer-outer button{
+    outline: none;
+    border: none;
+}
+.menu, header li, footer li {
+    cursor: pointer;
+}
+.items-box h4, p{
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+}
 @keyframes slide {
     0% {
         transform: translateX(0);
@@ -459,6 +484,12 @@ form i {
         transform: translateX(-50%);
     }
 }
+@keyframes btnslide {
+    0% { transform: rotate(35deg) translateX(-100%); }
+    100% { transform: rotate(35deg) translateX(500%); }
+}
+
+
 
 @media (max-width:768px) {
     .desk-hidden{
@@ -602,7 +633,6 @@ form i {
         right: 3.5rem;
     }
     .logo img{
-        position: relative;
         left: -1.5rem;
         width: 6rem;
     }
@@ -610,3 +640,7 @@ form i {
         font-size: 1.3rem;
     }
 }
+
+
+
+
