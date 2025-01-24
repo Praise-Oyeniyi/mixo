@@ -28,6 +28,7 @@ body{
     width: 100vw;
     margin: 0 auto;
     overflow-x: hidden !important;
+    position: relative;
 }
 li, .logo{
     padding: .1rem .5rem;
@@ -361,6 +362,7 @@ form .form-item-go{
     width: 45%;
     justify-content: space-between;
     column-gap: 2rem;
+    position: relative;
 }
 .footer-inner ul li{
     font-size: 1rem;
@@ -418,16 +420,20 @@ form i {
 }
 .footer-outer{
     position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 .footer-icons{
     position: fixed;
     display: flex;
+    max-width: 95%;
     width: 95%;
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     justify-content: space-between;
     align-items: center;
+    overflow: hidden !important;
 }
 .f-icon{
     font-size: 1rem;
@@ -474,7 +480,8 @@ form i {
         line-height: 1.5rem;
     }
     .mobile-small{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        font-weight: 100;
     }
     .slideshow-outer, .mixo-video-outer{
         width: 93%;
@@ -577,6 +584,7 @@ form i {
     }
     .footer-icons{
         width: 90%;
+        overflow: hidden;
     }
     .items-box{
         row-gap: .5rem;
@@ -597,5 +605,8 @@ form i {
         position: relative;
         left: -1.5rem;
         width: 6rem;
+    }
+    .smaller{
+        font-size: 1.3rem;
     }
 }
