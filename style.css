@@ -740,6 +740,9 @@ form i {
     .smaller{
         font-size: 1.3rem;
     }
+    .ham-outer{
+        padding: 0;
+    }
 }
 
 

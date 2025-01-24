@@ -74,35 +74,35 @@ document.querySelector('.mixo-video-inner').addEventListener('click', function()
     `;
 });
 
-const button = document.querySelector('.f-icon-pallete');
-const colors = [
-    'var(--body-bg-primary)',
-    'var(--secondary)',
-    'var(--tetiary)',
-    'var(--black)',
-    'var(--pink)'
-];
-const primaryColors = [
-    '#263340',
-    '#20e4b4',
-    '#ffffff',
-    '#000000',
-    '#e04270'
-];
+// const button = document.querySelector('.f-icon-pallete');
+// const colors = [
+//     'var(--body-bg-primary)',
+//     'var(--secondary)',
+//     'var(--tetiary)',
+//     'var(--black)',
+//     'var(--pink)'
+// ];
+// const primaryColors = [
+//     '#263340',
+//     '#20e4b4',
+//     '#ffffff',
+//     '#000000',
+//     '#e04270'
+// ];
 
 
-let currentColorIndex = localStorage.getItem('backgroundColorIndex') 
-    ? parseInt(localStorage.getItem('backgroundColorIndex')) 
-    : 0;
+// let currentColorIndex = localStorage.getItem('backgroundColorIndex') 
+//     ? parseInt(localStorage.getItem('backgroundColorIndex')) 
+//     : 0;
 
-document.body.style.background = .setProperty('--body-bg-primary', primaryColors[currentColorIndex]);
-document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+// document.body.style.background = colors[currentColorIndex];
+// document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
 
-button.addEventListener('click', () => {
-    currentColorIndex = (currentColorIndex + 1) % colors.length;
-    document.body.style.background = colors[currentColorIndex];
-    document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+// button.addEventListener('click', () => {
+//     currentColorIndex = (currentColorIndex + 1) % colors.length;
+//     document.body.style.background = colors[currentColorIndex];
+//     document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
 
-    localStorage.setItem('backgroundColorIndex', currentColorIndex);
-    localStorage.setItem('primaryColorIndex', currentColorIndex);
-});
+//     localStorage.setItem('backgroundColorIndex', currentColorIndex);
+//     localStorage.setItem('primaryColorIndex', currentColorIndex);
+// });
