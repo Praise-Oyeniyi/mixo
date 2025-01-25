@@ -179,6 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
             item.classList.remove('slider-active');
         });
+        document.querySelectorAll('select option').forEach((e)=>{
+            e.style.color = 'var(--tetiary)'
+        })
 
         const fromSelect = document.getElementById('from-select');
         const toSelect = document.getElementById('to-select');
@@ -190,6 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemText = item.querySelector('h4').textContent.trim();
             if (itemText === fromValue || itemText === toValue) {
                 item.classList.add('slider-active');
+                document.querySelectorAll('select option').forEach((e)=>{
+                    if(e.value === fromValue || e.value === toValue){
+                        e.style.color = 'rgb(168, 168, 168)'
+                    }
+                })
             }
         });
     };

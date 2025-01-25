@@ -387,6 +387,7 @@ button, .form-item{
 }
 form select{
     color:var(--tetiary);
+    outline:none;
 }
 form .form-item-go{
     padding: 1rem 1.3rem;
@@ -531,29 +532,14 @@ form i {
 .f-icon:hover{
     background-color: var(--secondary);
 }
-.items-box img{
-    filter: invert(100%) brightness(200%);
+.items-box svg{
+    fill: var(--tetiary);
     width: 6rem;
     cursor: pointer;
     overflow: hidden;
 }
-.info-slider-inner .circle{
-    filter: invert(0) ;
-    clip-path: circle();
-}
-.info-slider-inner .poly{
-    filter: invert(0) ;
-    clip-path: polygon(
-        50% 0%, 
-        100% 25%, 
-        100% 75%, 
-        50% 100%, 
-        0% 75%, 
-        0% 25%
-    );
- }
-.slider-active{
-    background-color: var(--secondary);
+.slider-active path{
+    fill: var(--secondary);
 }
 .footer-outer button{
     outline: none;
@@ -689,7 +675,7 @@ form i {
         width: 90vw; 
         right: -5000rem !important; 
         padding: 2rem .5rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
     .menu-outer .active {
         right: -5rem !important;
@@ -733,7 +719,7 @@ form i {
         width: 3rem;
     }
     .menu .search{
-        font-size: 1rem;
+        font-size: 1.3rem;
         opacity: 1;
         visibility: visible; 
         right: 3.5rem;
