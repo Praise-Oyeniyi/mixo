@@ -361,10 +361,11 @@ button, .form-item{
 .slider {
     display: flex;
     transition: transform 0.5s ease;
+    min-height: 100%;
 }
 .slide {
     min-width: 100%;
-    min-height:100%;
+    min-height:100% !important;
     height: 100%;
     object-fit: contain;
 }
@@ -630,7 +631,15 @@ form i {
         max-width: 100%;
         width: 100%;
         background-color: transparent;
-        height: auto;
+        height: 35vh;
+    }
+    .slider{
+        height: 100%;
+    }
+    .slider img{
+        min-height: 100%;
+        object-fit: cover;
+        object-position: top left;
     }
     .info-slider-inner i{
         font-size: 4rem;
@@ -750,7 +759,7 @@ form i {
         padding: 0;
     }
     .sidebar .social-icons{
-        bottom: 12rem !important;
+        bottom: 10rem !important;
     }
 }
 

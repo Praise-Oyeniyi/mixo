@@ -196,3 +196,20 @@ colorCycleBtn.addEventListener('click', () => {
     localStorage.setItem('currentBackgroundColor', currentColorIndex);
     localStorage.setItem('currentPrimaryColor', primaryColors[currentColorIndex]);
 });
+
+
+window.addEventListener('load', () => {
+    const savedColorIndex = localStorage.getItem('currentBackgroundColor');
+    const savedPrimaryColor = localStorage.getItem('currentPrimaryColor');
+
+    if (savedColorIndex !== null) {
+        currentColorIndex = parseInt(savedColorIndex);
+        document.body.style.background = backgroundColors[currentColorIndex];
+        
+        if (savedPrimaryColor) {
+            document.documentElement.style.setProperty('--body', backgroundColors[currentColorIndex]);
+            document.documentElement.style.setProperty('--primary', savedPrimaryColor);
+            applyColorStyles(currentColorIndex);
+        }
+    }
+});
