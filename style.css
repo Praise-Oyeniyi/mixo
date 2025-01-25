@@ -536,13 +536,13 @@ form i {
     background-color: var(--secondary);
 }
 .items-box svg{
-    fill: var(--tetiary);
+    fill: var(--tetiary) ;
     width: 6rem;
     cursor: pointer;
     overflow: hidden;
 }
 .slider-active path{
-    fill: var(--secondary);
+    fill: var(--secondary) !important;
 }
 .fill-tetiary{
     fill: var(--secondary);

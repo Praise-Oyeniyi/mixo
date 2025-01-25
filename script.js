@@ -28,14 +28,11 @@ let currentColorIndex = 0;
 
 function applyColorStyles(index) {
     const logoImg = document.querySelector('.logo-img');
-    const sliderItems = document.querySelectorAll('.items-img');
 
     document.documentElement.style.setProperty('--tetiary', '#ffffff');
-    document.documentElement.style.setProperty('--secondary', '#20e4b4;');
+    document.documentElement.style.setProperty('--secondary', '#20e4b4');
+    document.documentElement.style.setProperty('--tetiary', '#ffffff');
 
-    sliderItems.forEach((e)=>{
-        e.style.filter = 'invert(0)';
-    }) 
     logoImg.style.filter = 'invert(0)';
     
     switch(backgroundColors[index]) {
@@ -43,9 +40,6 @@ function applyColorStyles(index) {
             document.documentElement.style.setProperty('--tetiary', '#000000');
             document.documentElement.style.setProperty('--hero-img', '#ffffff');
             logoImg.style.filter = 'invert(1)';
-            sliderItems.forEach((e)=>{
-                e.style.filter = 'invert(1) brightness(0)';
-            }) 
             break;
         case 'linear-gradient(45deg, hsl(168, 78%, 51%), hsl(168, 78%, 51%)':
             logoImg.style.filter = 'invert(1)';
@@ -56,9 +50,6 @@ function applyColorStyles(index) {
         case 'linear-gradient(45deg, hsl(0, 0%, 0%), hsl(0, 0%, 5%))':
             document.documentElement.style.setProperty('--secondary', '#e04270');
             document.documentElement.style.setProperty('--hero-img', 'hsl(343 72% 57%)');
-            sliderItems.forEach((e)=>{
-                e.style.filter = 'invert(1) brightness(200%)';
-            }) 
             break;
         case 'linear-gradient(45deg, hsl(343, 72%, 57%), hsl(343, 72%, 57%))':
             logoImg.style.filter = 'invert(1)';
@@ -66,13 +57,12 @@ function applyColorStyles(index) {
             document.documentElement.style.setProperty('--hero-img', '#fff');
             break;
         case 'linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%))':
-            sliderItems.forEach((e)=>{
-                e.style.filter = 'invert(1) brightness(200%)';
-            }) 
+            document.documentElement.style.setProperty('--tetiary', '#ffffff');
+            document.documentElement.style.setProperty('--secondary', '#20e4b4');
             break;
         default:
             document.documentElement.style.setProperty('--tetiary', '#ffffff');
-            document.documentElement.style.setProperty('--secondary', '#20e4b4;');
+            document.documentElement.style.setProperty('--secondary', '#20e4b4');
     }
 }
 
