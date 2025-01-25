@@ -16,6 +16,9 @@
     font-style: normal;
     font-display: swap; 
 }
+.logo-fill{
+    fill:var(--tetiary);
+}
 
 @font-face {
     font-family: 'Nunito';
@@ -46,16 +49,13 @@ body{
     overflow-x: hidden !important;
     position: relative;
 }
-.logo-img{
-    width: fit-content;
-}
-li, .logo{
-    padding: .1rem .5rem;
+li, .logo svg{
+    padding: .5rem .75rem;
     transition: .2s ease;
     width: fit-content;
     letter-spacing: 0.05rem;
 }
-li:hover, .logo img:hover{
+li:hover, .logo svg:hover{
     background-color: var(--secondary) !important;
 }
 .flex{
@@ -77,17 +77,18 @@ header{
 .logo, .menu-outer{
     width: 33%;
 }
-.logo img{
+
+.logo svg{
     position: relative;
-    object-fit: contain;
-    height: auto;
-    width: 10rem;
-    left: -2rem;
+    height: 2.5rem;
+    left: -1rem;
+    fill: var(--tetiary) !important;
+    color: var(--tetiary);
 }
 .header-outer{
     background-color: var(--primary);
     color: var(--tetiary);
-    padding: .7rem 0;
+    padding: .5rem 0;
 }
 .btn-style {
     position: relative;
@@ -281,11 +282,14 @@ nav{
 }
 .hero-icons{
     max-width: fit-content;
-    /* color:var(--tetiary); */
+    fill:var(--tetiary);
     margin: 1.5rem auto;
     font-size: 1.8rem;
 }
-.hero-icons i {
+.f-linux{
+    width: 1.8rem;
+}
+.hero-icons svg {
     margin: 0 1rem;
     cursor: pointer;
 }
@@ -318,6 +322,7 @@ button, .form-item{
     font-size:1rem;
 }
 .slideshow-outer, .mixo-video-outer{
+    position: relative;
     width: 90%;
     height:fit-content;
     margin: 2rem auto 6rem auto;
@@ -348,12 +353,14 @@ button, .form-item{
     height: 100%;
 }
 .vid-play{
-    font-size: 3rem;
+    height: 3rem;
+    width: fit-content;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 1px 1px 10px #000;
+    fill:#fff;
 }
 .slideshow-inner{
     box-shadow: 0 0 15rem 0px var(--hero-img);
@@ -374,8 +381,10 @@ button, .form-item{
     outline: none;
     border: none;
 }
-.slideshow-outer button i{
-    font-size: 2rem;
+.slideshow-outer button svg{
+    height: 2rem;
+    width: 2rem;
+    fill: var(--tetiary);
 }
 .info-outer{
     padding: 3rem 0;
@@ -480,8 +489,9 @@ form .form-item-go{
     object-fit: contain;
     width: 100%;
 }
-form i {
-    font-size: 2rem;
+form svg {
+    height: 2rem;
+    fill: var(--tetiary);
 }
 .info-slider {
     width: 100%;
@@ -496,7 +506,7 @@ form i {
     column-gap: 5rem;
     animation: slide 20s linear infinite;
 }
-.info-slider-inner i{
+.info-slider-inner svg{
     font-size: 8rem;
 }
 .desk-hidden{
@@ -531,15 +541,27 @@ form i {
     align-items: center;
     overflow: hidden !important;
 }
-.f-icon{
-    font-size: 1.5rem;
-    padding: .5rem .42rem;
-    border-radius: 50%;
-    color: var(--primary);
-    background-color: var(--tetiary);
-    transition: .2s ease-in;
+button .f-icon{
+    height:1.5rem;
+    width: 1.5rem;
+    color:var(--primary); ;
+    fill: var(--primary);
+    margin:.5rem;
 }
-.f-icon:hover{
+
+.footer-icons button{
+    /* padding: .42rem .5rem; */
+    background-color: var(--tetiary);
+    box-shadow: 1px 1px 5px var(--black);
+    border: 1px solid  var(--primary);
+    transition: .2s ease-in;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-icons button:hover{
     background-color: var(--secondary);
 }
 .items-box svg{
@@ -570,13 +592,14 @@ form i {
     left: 1rem;
     
 }
-.social-icons i{
+.social-icons svg{
     padding: .5rem;
-    color: var(--tetiary);
-    font-size: 2.5rem;
+    fill: var(--tetiary);
+    height: 3rem;
+    width: 3rem;
     transform: all .3s ease;
 }
-.social-icons i:hover{
+.social-icons svg:hover{
     background-color: var(--secondary);
     transform: all .3s ease;
 }
@@ -602,6 +625,15 @@ form i {
 @media (max-width:768px) {
     .desk-hidden{
         display: flex !important;
+    }
+    .hero-icons{
+        font-size: 1.3rem;
+    }
+    .f-linux{
+        width: 1.3rem;
+    }
+    .hero-icons svg{
+        margin: 0 .875rem;
     }
     .header-inner nav{
         display: none;
@@ -641,8 +673,9 @@ form i {
         object-fit: cover;
         object-position: top left;
     }
-    .info-slider-inner i{
-        font-size: 4rem;
+    .info-slider-inner svg{
+        fill: #fff;
+        max-width: 1rem;
     }
     .info-slider{
         height:auto;
@@ -679,10 +712,6 @@ form i {
         height: auto;
         width: 95%;
         
-    }
-    .mixo-video-inner img{
-        height: 30vh;
-        object-fit: cover;
     }
     .library-outer .sub-head{
         width:90%;
@@ -748,9 +777,8 @@ form i {
         visibility: visible; 
         right: 3.5rem;
     }
-    .logo img{
-        left: -1.5rem;
-        width: 6rem;
+    .logo svg{
+        height: 2rem;
     }
     .smaller{
         font-size: 1.3rem;
@@ -761,9 +789,30 @@ form i {
     .sidebar .social-icons{
         bottom: 12rem !important;
     }
-    .social-icons i{
+    .social-icons svg{
         font-size: 2rem;
     }
+    .prev-btn, .next-btn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .slideshow-outer button svg{
+        height: .875rem;
+        width: .875rem;
+        fill: var(--tetiary);
+    }
+    .prev-btn{
+        left: 0;
+        z-index: 999;
+    }
+    .next-btn{
+        right: 0rem;
+    }
+    .vid-play{
+        height: 2.5rem;
+    }
+
 }
 
 
