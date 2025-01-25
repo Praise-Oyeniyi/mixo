@@ -759,7 +759,10 @@ form i {
         padding: 0;
     }
     .sidebar .social-icons{
-        bottom: 10rem !important;
+        bottom: 12rem !important;
+    }
+    .social-icons i{
+        font-size: 2rem;
     }
 }
 
