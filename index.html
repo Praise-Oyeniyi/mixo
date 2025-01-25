@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta name="description" content="Mixo homepage">
 </head>
 
 <body>
@@ -71,16 +72,16 @@
                 <i class="fa-brands fa-android"></i>
             </div>
 
-            <button class="flex items-center border btn-style head-btn-style">
+            <button aria-label="Get stated with Mixo" class="flex items-center border btn-style head-btn-style">
                 Start Free Trial
             </button>
             <p>7 Days free, then $7/month</p>
 
             <div class="slideshow-outer flex items-center">
-                <button class="prev prev-btn">
+                <button aria-label="previous slider" aria-labelledby="Slideshow" class="prev prev-btn">
                     <i class="fa-solid fa-angles-left"></i>
                 </button>
-                    <div class="slideshow-inner ">
+                    <div class="slideshow-inner " id="Slideshow">
                         <div class="slider mobile-hidde">
                             <img src="https://www.mixo.dev/assets/website/computer-cropped-desk-sm.webp" alt="Slide 1" class="slide"/>
                             <img src="https://www.mixo.dev/assets/website/app-screenshot-2-desk-sm.png" alt="Slide 2" class="slide"/>
@@ -96,7 +97,7 @@
                             <img src="https://www.mixo.dev/assets/website/computer-cropped-mobile-sm.webp" alt="Slide 4" class="slide"/>
                         </div> -->
                     </div>
-                <button class="next next-btn">
+                <button class="next next-btn" aria-labelledby="Slideshow" class="next prev-btn">
                     <i class="fa-solid fa-angles-right"></i>
                 </button>
             </div>
@@ -304,7 +305,7 @@
             </div>
 
             <form action="#" method="post" class="items-center justify-between flex">
-                <select name="from" id="from-select" class="form-item border">
+                <select name="from" id="from-select" class="form-item border" aria-label="select music option">
                     <option value="RekordBox">RekordBox</option>
                     <option value="Traktor">Traktor</option>
                     <option value="Ultramixer">Ultramixer</option>
@@ -319,7 +320,7 @@
                     <option value="Djay Pro">Djay Pro</option>
                 </select>
                 <i class="fa-solid fa-angles-right"></i>
-                <select name="to" id="to-select" class="form-item border">
+                <select name="to" id="to-select" class="form-item border" aria-label="select music option">
                     <option value="Traktor">Traktor</option>
                     <option value="RekordBox">RekordBox</option>
                     <option value="Ultramixer">Ultramixer</option>
@@ -522,7 +523,7 @@
                     <i class="fa-brands fa-android"></i>
                 </div>
     
-                <button class="border flex items-center btn-style btn-style-foot">
+                <button class="border flex items-center btn-style btn-style-foot" aria-label="Get stated with Mixo">
                     Start Free Trial
                 </button>
                 <p class="text-center">7 Days free, then $7/month</p>
@@ -548,8 +549,8 @@
                 </ul>
             </div>
             <div class="footer-icons">
-                <button><i class="fa-solid fa-fill-drip f-icon f-icon-pallete"></i></button>
-                <button><i class="fa-regular fa-comments f-icon"></i></button>  
+                <button aria-label="change website pallette"><i class="fa-solid fa-fill-drip f-icon f-icon-pallete"></i></button>
+                <button aria-label="chat with Mixo"><i class="fa-regular fa-comments f-icon"></i></button>  
             </div>
         </footer>
 

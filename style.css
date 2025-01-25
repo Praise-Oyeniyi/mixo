@@ -333,7 +333,7 @@ button, .form-item{
     width: 100%;
     overflow: hidden;
     margin: 0 auto ;
-    background-color: #000;
+    background-color: var(--primary);
     height: 80vh;
 }
 .mixo-video-inner{
