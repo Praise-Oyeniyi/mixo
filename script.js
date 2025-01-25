@@ -6,6 +6,104 @@ const nextBtn = document.querySelector('.next-btn');
 let currentIndex = 0;
 const totalSlides = slides.length;
 
+const colorCycleBtn = document.querySelector('.f-icon-pallete');
+        
+const backgroundColors = [
+    '#20e4b4',   
+    '#ffffff',   
+    '#000000',   
+    '#e04270',  
+    'linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%))' 
+];
+
+const primaryColors = [
+    '#20e4b4',   
+    '#ffffff',   
+    '#000000',   
+    '#e04270',   
+    '#263340'    
+];
+
+let currentColorIndex = 0;
+
+function applyColorStyles(index) {
+    const logoImg = document.querySelector('.logo-img');
+    const sliderItems = document.querySelectorAll('.items-img');
+
+    document.documentElement.style.setProperty('--tetiary', '#ffffff');
+    sliderItems.forEach((e)=>{
+        e.style.filter = 'invert(0)';
+    }) 
+    logoImg.style.filter = 'invert(0)';
+    
+    switch(backgroundColors[index]) {
+        case '#ffffff':
+            document.documentElement.style.setProperty('--tetiary', '#000000');
+            document.documentElement.style.setProperty('--hero-img', '#ffffff');
+            logoImg.style.filter = 'invert(1)';
+            sliderItems.forEach((e)=>{
+                e.style.filter = 'invert(1) brightness(0)';
+            }) 
+            break;
+        case '#20e4b4':
+            logoImg.style.filter = 'invert(1)';
+            document.documentElement.style.setProperty('--secondary', '#ffffff');
+            document.documentElement.style.setProperty('--tetiary', '#263340');
+            document.documentElement.style.setProperty('--hero-img', '#fff');
+            break;
+        case '#000000':
+            document.documentElement.style.setProperty('--secondary', '#e04270');
+            document.documentElement.style.setProperty('--hero-img', 'hsl(343 72% 57%)');
+            sliderItems.forEach((e)=>{
+                e.style.filter = 'invert(1) brightness(200%)';
+            }) 
+            break;
+        case '#e04270':
+            logoImg.style.filter = 'invert(1)';
+            document.documentElement.style.setProperty('--tetiary', '#263340');
+            document.documentElement.style.setProperty('--hero-img', '#fff');
+            break;
+        case 'linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%))':
+            sliderItems.forEach((e)=>{
+                e.style.filter = 'invert(1) brightness(200%)';
+            }) 
+            break;
+        default:
+            logoImg.style.filter = 'invert(100%) brightness(200%)'; 
+    }
+}
+
+colorCycleBtn.addEventListener('click', () => {
+    currentColorIndex = (currentColorIndex + 1) % backgroundColors.length;
+    
+    document.documentElement.style.setProperty('--body', backgroundColors[currentColorIndex]);
+    document.documentElement.style.setProperty('--primary', primaryColors[currentColorIndex]);
+    
+    applyColorStyles(currentColorIndex);
+    
+    localStorage.setItem('currentBackgroundColor', currentColorIndex);
+    localStorage.setItem('currentPrimaryColor', primaryColors[currentColorIndex]);
+});
+
+// Initialization on page load
+window.addEventListener('load', () => {
+    const savedColorIndex = localStorage.getItem('currentBackgroundColor');
+    const savedPrimaryColor = localStorage.getItem('currentPrimaryColor');
+
+    if (savedColorIndex !== null) {
+        currentColorIndex = parseInt(savedColorIndex);
+        document.body.style.background = backgroundColors[currentColorIndex];
+        
+        if (savedPrimaryColor) {
+            document.documentElement.style.setProperty('--body', backgroundColors[currentColorIndex]);
+            document.documentElement.style.setProperty('--primary', savedPrimaryColor);
+            applyColorStyles(currentColorIndex);
+        }
+    }
+});
+
+
+
 
 document.querySelector('.menu').addEventListener('click', function() {
     const sidebar = document.querySelector('.sidebar');
@@ -75,54 +173,32 @@ document.querySelector('.mixo-video-inner').addEventListener('click', function()
 });
 
 
-const colorButton = document.querySelector('.f-icon-pallete');
-const root = document.documentElement;
 
-const colors = [
-    '--body-bg-primary', // Added initial background
-    '--primary',          // Added initial primary color
-    '--secondary', 
-    '--tetiary', 
-    '--black', 
-    '--pink'
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const updateSliderActive = () => {
+        document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
+            item.classList.remove('slider-active');
+        });
 
-let currentColorIndex = 0;
+        const fromSelect = document.getElementById('from-select');
+        const toSelect = document.getElementById('to-select');
+        
+        const fromValue = fromSelect.value;
+        const toValue = toSelect.value;
 
-colorButton.addEventListener('click', () => {
-    // Get next color in sequence
-    const currentColor = colors[currentColorIndex];
-    const newPrimaryColor = getComputedStyle(root).getPropertyValue(currentColor).trim();
-    
-    // Set the new primary color
-    root.style.setProperty('--primary', newPrimaryColor);
-    localStorage.setItem('customPrimaryColor', newPrimaryColor);
-    
-    // Update page background with a gradient using the new primary color
-    const newBackground = `linear-gradient(45deg, ${newPrimaryColor}, ${newPrimaryColor})`;
-    root.style.setProperty('--body-bg-primary', newBackground);
-    localStorage.setItem('customBackgroundColor', newBackground);
-    
-    // Move to next color index, wrapping around to start if needed
-    currentColorIndex = (currentColorIndex + 1) % colors.length;
-    localStorage.setItem('currentColorIndex', currentColorIndex);
-});
+        document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
+            const itemText = item.querySelector('h4').textContent.trim();
+            if (itemText === fromValue || itemText === toValue) {
+                item.classList.add('slider-active');
+            }
+        });
+    };
 
-// Restore state on page load
-window.addEventListener('load', () => {
-    const savedPrimaryColor = localStorage.getItem('customPrimaryColor');
-    const savedBackgroundColor = localStorage.getItem('customBackgroundColor');
-    const savedColorIndex = localStorage.getItem('currentColorIndex');
+    const fromSelect = document.getElementById('from-select');
+    const toSelect = document.getElementById('to-select');
     
-    if (savedPrimaryColor) {
-        root.style.setProperty('--primary', savedPrimaryColor);
-    }
-    
-    if (savedBackgroundColor) {
-        root.style.setProperty('--body-bg-primary', savedBackgroundColor);
-    }
-    
-    if (savedColorIndex !== null) {
-        currentColorIndex = parseInt(savedColorIndex);
-    }
+    fromSelect.addEventListener('change', updateSliderActive);
+    toSelect.addEventListener('change', updateSliderActive);
+
+    updateSliderActive();
 });
