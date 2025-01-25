@@ -285,7 +285,7 @@ nav{
     margin: 1.5rem auto;
     font-size: 1.8rem;
 }
-.hero-icons i {
+.hero-icons svg {
     margin: 0 1rem;
     cursor: pointer;
 }
@@ -340,6 +340,12 @@ button, .form-item{
     position: relative;
     width: 80%;
     height: 87vh;
+}
+.mixo-video-inner img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
 }
 .vid-play{
     font-size: 3rem;
@@ -563,7 +569,7 @@ form i {
     left: 1rem;
     
 }
-.social-icons i{
+.social-icons svg{
     padding: .5rem;
     color: var(--tetiary);
     font-size: 2.5rem;
