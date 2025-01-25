@@ -541,7 +541,7 @@ form i {
 .f-icon:hover{
     background-color: var(--secondary);
 }
-.items-box i{
+.items-box svg{
     fill: var(--tetiary) ;
     width: 6rem;
     cursor: pointer;
@@ -730,7 +730,7 @@ form i {
     .items-box h4{
         font-size: .75rem;
     }
-    .items-box i{
+    .items-box svg{
         width: 3rem;
     }
     .menu .search{
@@ -748,6 +748,9 @@ form i {
     }
     .ham-outer{
         padding: 0;
+    }
+    .sidebar .social-icons{
+        bottom: 12rem;
     }
 }
 
