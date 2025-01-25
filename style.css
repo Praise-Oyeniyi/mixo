@@ -285,7 +285,7 @@ nav{
     margin: 1.5rem auto;
     font-size: 1.8rem;
 }
-.hero-icons svg {
+.hero-icons i {
     margin: 0 1rem;
     cursor: pointer;
 }
@@ -541,7 +541,7 @@ form i {
 .f-icon:hover{
     background-color: var(--secondary);
 }
-.items-box svg{
+.items-box i{
     fill: var(--tetiary) ;
     width: 6rem;
     cursor: pointer;
@@ -569,7 +569,7 @@ form i {
     left: 1rem;
     
 }
-.social-icons svg{
+.social-icons i{
     padding: .5rem;
     color: var(--tetiary);
     font-size: 2.5rem;
@@ -730,7 +730,7 @@ form i {
     .items-box h4{
         font-size: .75rem;
     }
-    .items-box svg{
+    .items-box i{
         width: 3rem;
     }
     .menu .search{
