@@ -656,14 +656,14 @@ button .f-icon{
     }
     .slideshow-outer, .mixo-video-outer{
         width: 93%;
-        margin: 2rem auto 3.5rem auto;
+        margin: 2rem auto 2.5rem auto;
         column-gap: .5rem;
     }
     .slideshow-inner, .mixo-video-inner{
         max-width: 100%;
         width: 100%;
         background-color: transparent;
-        height: 35vh;
+        height: 25vh;
     }
     .slider{
         height: 100%;
@@ -672,10 +672,6 @@ button .f-icon{
         min-height: 100%;
         object-fit: cover;
         object-position: top left;
-    }
-    .info-slider-inner svg{
-        fill: #fff;
-        max-width: 1rem;
     }
     .info-slider{
         height:auto;
@@ -810,7 +806,7 @@ button .f-icon{
         right: 0rem;
     }
     .vid-play{
-        height: 2.5rem;
+        height: 2rem;
     }
 
 }
