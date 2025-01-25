@@ -459,16 +459,19 @@ form .form-item-go{
 }
 
 .library-image{
-    height: 80vh;
-    width: 80%;
+    height: auto;
+    width: 100%;
     margin: 0 auto;
     justify-content: center ;
     
 }
-.library-image h1{
-    font-size: 6rem;
-    font-weight:900;
-    text-transform: uppercase;
+.library-image-inner{
+    width: 65%;
+    margin: 2rem auto 0 auto;
+}
+.library-image-inner svg{
+    object-fit: contain;
+    width: 100%;
 }
 form i {
     font-size: 2rem;
@@ -540,6 +543,12 @@ form i {
 }
 .slider-active path{
     fill: var(--secondary);
+}
+.fill-tetiary{
+    fill: var(--secondary);
+}
+.fill-primary{
+    fill: var(--tetiary);
 }
 .footer-outer button{
     outline: none;
@@ -652,12 +661,9 @@ form i {
         padding: .1rem;
     }
     .library-image{
-        height: 50vh;
+        height: auto;
         width: 95%;
         
-    }
-    .library-image h1{
-        font-size: 3rem;
     }
     .mixo-video-inner img{
         height: 30vh;

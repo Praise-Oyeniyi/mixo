@@ -9,10 +9,10 @@ const totalSlides = slides.length;
 const colorCycleBtn = document.querySelector('.f-icon-pallete');
         
 const backgroundColors = [
-    '#20e4b4',   
-    '#ffffff',   
-    '#000000',   
-    '#e04270',  
+    'linear-gradient(45deg, hsl(168, 78%, 51%), hsl(168, 78%, 51%)',   
+    'linear-gradient(45deg, #fff, #fff)',   
+    'linear-gradient(45deg, hsl(0, 0%, 0%), hsl(0, 0%, 5%))',   
+    'linear-gradient(45deg, hsl(343, 72%, 57%), hsl(343, 72%, 57%))',  
     'linear-gradient(45deg, hsl(210, 25%, 20%), hsl(209, 25%, 30%))' 
 ];
 
@@ -31,13 +31,15 @@ function applyColorStyles(index) {
     const sliderItems = document.querySelectorAll('.items-img');
 
     document.documentElement.style.setProperty('--tetiary', '#ffffff');
+    document.documentElement.style.setProperty('--secondary', '#20e4b4;');
+
     sliderItems.forEach((e)=>{
         e.style.filter = 'invert(0)';
     }) 
     logoImg.style.filter = 'invert(0)';
     
     switch(backgroundColors[index]) {
-        case '#ffffff':
+        case 'linear-gradient(45deg, #fff, #fff)':
             document.documentElement.style.setProperty('--tetiary', '#000000');
             document.documentElement.style.setProperty('--hero-img', '#ffffff');
             logoImg.style.filter = 'invert(1)';
@@ -45,20 +47,20 @@ function applyColorStyles(index) {
                 e.style.filter = 'invert(1) brightness(0)';
             }) 
             break;
-        case '#20e4b4':
+        case 'linear-gradient(45deg, hsl(168, 78%, 51%), hsl(168, 78%, 51%)':
             logoImg.style.filter = 'invert(1)';
             document.documentElement.style.setProperty('--secondary', '#ffffff');
             document.documentElement.style.setProperty('--tetiary', '#263340');
             document.documentElement.style.setProperty('--hero-img', '#fff');
             break;
-        case '#000000':
+        case 'linear-gradient(45deg, hsl(0, 0%, 0%), hsl(0, 0%, 5%))':
             document.documentElement.style.setProperty('--secondary', '#e04270');
             document.documentElement.style.setProperty('--hero-img', 'hsl(343 72% 57%)');
             sliderItems.forEach((e)=>{
                 e.style.filter = 'invert(1) brightness(200%)';
             }) 
             break;
-        case '#e04270':
+        case 'linear-gradient(45deg, hsl(343, 72%, 57%), hsl(343, 72%, 57%))':
             logoImg.style.filter = 'invert(1)';
             document.documentElement.style.setProperty('--tetiary', '#263340');
             document.documentElement.style.setProperty('--hero-img', '#fff');
@@ -69,7 +71,8 @@ function applyColorStyles(index) {
             }) 
             break;
         default:
-            logoImg.style.filter = 'invert(100%) brightness(200%)'; 
+            document.documentElement.style.setProperty('--tetiary', '#ffffff');
+            document.documentElement.style.setProperty('--secondary', '#20e4b4;');
     }
 }
 
