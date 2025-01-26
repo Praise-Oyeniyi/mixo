@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-    document.querySelector('.menu').addEventListener('click', function() {
+// sidebar script
+    document.querySelector('.ham-outer').addEventListener('click', function() {
         const sidebar = document.querySelector('.sidebar');
         const body = document.body;
         
@@ -225,3 +225,37 @@ const liveChat = document.querySelector('.live-chat');
     closeChatIcon.addEventListener('click', () => {
         liveChat.classList.remove('show');
     });
+
+
+// search modal script 
+const modal = document.querySelector('.s-modal');
+const searchTrigger = document.querySelector('.search');
+const closeBtn = document.querySelector('.search-close');
+
+function toggleModal() {
+    if (modal.style.display !== 'block') {
+        modal.style.display = 'block';
+        document.body.classList.add('modal-open');
+    } else {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+    }
+}
+
+// Open modal on search trigger click
+searchTrigger.addEventListener('click', toggleModal);
+
+// Close modal when clicking outside or on close button
+modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === closeBtn) {
+        toggleModal();
+    }
+});
+
+// Keyboard shortcut (Ctrl + K)
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'k') {
+        e.preventDefault();
+        toggleModal();
+    }
+});
