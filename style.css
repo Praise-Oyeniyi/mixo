@@ -16,9 +16,6 @@
     font-style: normal;
     font-display: swap; 
 }
-.logo-fill{
-    fill:var(--tetiary);
-}
 
 @font-face {
     font-family: 'Nunito';
@@ -228,22 +225,23 @@ header{
     pointer-events: auto; 
 }
 nav{
-    width: 33%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
 }
 .header-inner  nav ul{
-    width: 100%;
+    width: 50%;
     margin: 0 auto;
-    column-gap: .8rem;
+    column-gap: .5rem;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    letter-spacing: .01em;
 }
 .header-inner .fa-bars{
     font-size: 1.8rem;
@@ -534,7 +532,8 @@ form svg {
     display: flex;
     max-width: 95%;
     width: 95%;
-    bottom: 3rem;
+    height: fit-content;
+    bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     justify-content: space-between;
@@ -550,16 +549,15 @@ button .f-icon{
 }
 
 .footer-icons button{
-    /* padding: .42rem .5rem; */
     background-color: var(--tetiary);
     box-shadow: 1px 1px 5px var(--black);
-    border: 1px solid  var(--primary);
+    border: 1px solid  var(--primary) !important;
     transition: .2s ease-in;
     border-radius: 50%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: .5rem;
 }
 .footer-icons button:hover{
     background-color: var(--secondary);
