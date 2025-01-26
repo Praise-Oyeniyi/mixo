@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
+// hero section slider function
     const slider = document.querySelector('.slider');
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.prev-btn');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     
-    
+    // faq items toggling script
     const faqItems = document.querySelectorAll('.faq-item');
         
     faqItems.forEach(item => {
@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+
+    // youtube video preview and display
     document.querySelector('.mixo-video-inner').addEventListener('click', function() {
         const videoContainer = this;
         const videoId = 'Lvz8Uuvlrw0'; 
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+    // convert them two select script to change the color of selected icons
     const updateSliderActive = () => {
         document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
             item.classList.remove('slider-active');
@@ -123,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+// script to update the website pallete
 const backgroundColors = [
     'linear-gradient(45deg, hsl(168, 78%, 51%), hsl(168, 78%, 51%)',   
     'linear-gradient(45deg, #fff, #fff)',   
@@ -208,3 +210,18 @@ window.addEventListener('load', () => {
         }
     }
 });
+
+// script for toggling live chat
+const liveChat = document.querySelector('.live-chat');
+    const chatIcon = document.querySelector('.f-icon-chat');
+    const closeChatIcon = document.querySelector('.lc-top-inner svg');
+
+    // Toggle chat visibility when chat icon is clicked
+    chatIcon.addEventListener('click', () => {
+        liveChat.classList.add('show');
+    });
+
+    // Hide chat when close icon is clicked
+    closeChatIcon.addEventListener('click', () => {
+        liveChat.classList.remove('show');
+    });

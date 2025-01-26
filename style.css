@@ -81,6 +81,7 @@ header{
     left: -1rem;
     fill: var(--tetiary) !important;
     color: var(--tetiary);
+    cursor: pointer;
 }
 .header-outer{
     background-color: var(--primary);
@@ -188,12 +189,13 @@ header{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.3rem;
+    height: 1.3rem;
     right: 5rem;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: .3s all ease-in;   
+    transition: .3s all ease-in;
+    fill: var(--tetiary);   
 }
 .sidebar .flex{
     height: 100%;
@@ -235,7 +237,7 @@ nav{
 .header-inner  nav ul{
     width: 50%;
     margin: 0 auto;
-    column-gap: .5rem;
+    /* column-gap: .5rem; */
     font-size: 1.1rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -277,6 +279,9 @@ nav{
     width: 50%;
     margin: 1rem auto;
     font-weight: 400;
+}
+.hero-desc span{
+    font-weight: 700;
 }
 .hero-icons{
     max-width: fit-content;
@@ -605,6 +610,45 @@ button .f-icon{
     font-weight: 500;
     font-family: "Nunito", sans-serif;
 }
+.live-chat{
+    position: fixed;
+    bottom: 3rem;
+    width: 20vw;
+    right: 2.5rem;
+    z-index: 99;
+    display: none;
+}
+.live-chat-inner .lc-top {
+    height: fit-content;
+    background-color: var(--secondary);
+    color: var(--tetiary);
+    width: 100%;
+    padding: 1rem .875rem;
+}
+.lc-top-inner{
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    align-items: center; 
+    font-weight: 700;
+    font-size: 1rem;
+}
+.lc-top svg{
+    height: 1.5rem;
+    width: fit-content;
+    fill:var(--tetiary);
+    cursor: pointer;
+}
+.lc-textarea{
+    height: 8rem;
+    width: 100%;
+    background: #fff;
+}
+.live-chat.show {
+    display: block;
+}
+
+
 @keyframes slide {
     0% {
         transform: translateX(0);
@@ -766,7 +810,7 @@ button .f-icon{
         width: 3rem;
     }
     .menu .search{
-        font-size: 1.3rem;
+        height: 1.3rem;
         opacity: 1;
         visibility: visible; 
         right: 3.5rem;
@@ -805,6 +849,11 @@ button .f-icon{
     }
     .vid-play{
         height: 2rem;
+    }
+    .live-chat{
+        bottom: 3rem;
+        width: 70vw;
+        right: 1.5rem;
     }
 
 }
