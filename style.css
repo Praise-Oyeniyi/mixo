@@ -557,7 +557,7 @@ button .f-icon{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: .5rem;
+    margin: .5rem;
 }
 .footer-icons button:hover{
     background-color: var(--secondary);
