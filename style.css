@@ -384,7 +384,7 @@ button, .form-item{
 .slideshow-outer button svg{
     height: 2rem;
     width: 2rem;
-    fill: var(--tetiary);
+    fill: #fff;
 }
 .info-outer{
     padding: 3rem 0;
@@ -796,7 +796,7 @@ button .f-icon{
     .slideshow-outer button svg{
         height: .875rem;
         width: .875rem;
-        fill: var(--tetiary);
+        fill: #fff;
     }
     .prev-btn{
         left: 0;
