@@ -30,6 +30,7 @@
     scroll-behavior: smooth;
     text-decoration: none;
     list-style: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 h1, h2, h3, h4, h5, h6, li{
     font-family: "MyWebFont", serif;
@@ -45,6 +46,7 @@ body{
     margin: 0 auto;
     overflow-x: hidden !important;
     position: relative;
+    font-family: "Nunito", sans-serif;
 }
 li, .logo svg{
     padding: .5rem .75rem;
@@ -161,7 +163,7 @@ header{
     padding: .45rem 0 .3rem 0;
 }
 .header-inner{
-    padding: .5rem 0;
+    padding: .48rem 0;
     width:90%;
     margin:0 auto;
     align-items: center;
@@ -187,7 +189,7 @@ header{
 }
 .logo svg{
     position: relative;
-    height: 2.58rem;
+    height: 2.6rem;
     left: -1rem;
     fill: var(--tetiary) !important;
     color: var(--tetiary);
@@ -195,6 +197,8 @@ header{
 }
 .ham-outer{
     padding: .5rem 1rem;
+    position: relative;
+    z-index: 9999;
 }
 .ham1, .ham2, .ham3, .ham4{
     height: 3px;
@@ -238,6 +242,7 @@ header{
     visibility: hidden;
     transition: .3s all ease-in;
     fill: var(--tetiary);   
+    z-index: 9999;
 }
 .menu{
     width: fit-content;
@@ -276,14 +281,14 @@ nav li{
     position: absolute;
     height: 100vh;
     width: 25vw;
-    top:2.8rem;
+    top:0;
     right: -100%;
     opacity: 0;
     visibility: hidden;
     display: none;
     background-color: var(--primary);
     padding: 3rem 1rem;
-    transition: .3s all ease-in;   
+    transition: .3s all ease-in; 
 }
 
 .sidebar .flex{
@@ -300,7 +305,7 @@ nav li{
 }
 .sidebar .social-icons{
     position: relative;
-    bottom: 5rem !important;
+    bottom: 3.5rem;
     left: 1rem;
 }
 .social-icons svg{
@@ -377,10 +382,25 @@ nav li{
     transition: all .55s ease;
     font-weight: 500;
 }
-.btn-style:hover {
-    border: 2px solid var(--secondary);
+.btn-style::before{
+    content: '';
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color:var(--secondary) ;
+    z-index: -1;
+    left: -500px;
+    top: 60%;
+    transform: translateY(-50%) rotate(35deg);
+    transition: all .55s ease;
+}
+.btn-style:hover::before { 
     color: var(--primary);
+    left: 0;
     background-color: var(--secondary);
+}
+.btn-style:hover{
+    border: 2px solid var(--secondary);
 }
 .btn-get{
     font-size: 1.25rem;
@@ -473,6 +493,14 @@ nav li{
     row-gap: 1rem;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.ripple {
+    position: absolute;
+    pointer-events: none;
+    fill: var(--secondary);
+    opacity: 0.5;
+    animation: rippleEffect 1.5s ease-out forwards;
 }
 .items-box h4{
     color: var(--tetiary);
@@ -484,6 +512,7 @@ nav li{
     width: 6.25rem;
     cursor: pointer;
     overflow: hidden;
+    position: relative;
 }
 .items-box h4, p, .time{
     font-weight: 500;
@@ -493,9 +522,13 @@ nav li{
 form select{
     color:var(--tetiary);
     outline:none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
 }
 form .form-item-go{
     padding: .875rem 1rem;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
 }
 .form-item-go svg{
     height: 1.3rem;
@@ -700,6 +733,12 @@ button, .form-item{
     justify-content: space-between;
     align-items: center;
     overflow: hidden !important;
+    pointer-events: none;
+    z-index: 9999999;
+}
+
+.f-icon-pallete, .f-chat-btn{
+    pointer-events: visible;
 }
 button .f-icon{
     height:1.5rem;
@@ -735,7 +774,7 @@ button .f-icon{
 
 
 
-
+/* nav hiver animation */
  @keyframes widthChange1 {
     0% { width: 1.5rem; }
     100% { width: 1.65rem; }
@@ -814,6 +853,19 @@ button .f-icon{
 @keyframes btnslide {
     0% { transform: rotate(35deg) translateX(-100%); }
     100% { transform: rotate(35deg) translateX(500%); }
+}
+
+
+/* convert scale animation */
+@keyframes rippleEffect {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
 
 
@@ -929,7 +981,7 @@ button .f-icon{
         padding: 0;
     }
     .sidebar .social-icons{
-        bottom: 12rem !important;
+        bottom: 11rem !important;
     }
     .social-icons svg{
         font-size: 2rem;
@@ -937,6 +989,7 @@ button .f-icon{
     .sidebar{
         position: fixed;
         width: 90vw; 
+        top:2rem;
         right: -5000rem !important; 
         padding: 2rem .5rem;
         margin-top: 2rem;
@@ -1041,7 +1094,7 @@ button .f-icon{
     /* convert form */
     form select{
         max-width: 30%;
-        overflow-x: scroll;
+        overflow-x: scroll;    
     }
     form select option .border{
         padding: .1rem auto !important;

@@ -86,40 +86,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // convert them two select script to change the color of selected icons
+    // convert section-- the two select script to change the color of selected icons
     const updateSliderActive = () => {
+        // Reset all active states and colors
         document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
             item.classList.remove('slider-active');
         });
-        document.querySelectorAll('select option').forEach((e)=>{
-            e.style.color = 'var(--tetiary)'
-        })
-
+        document.querySelectorAll('select option').forEach((e) => {
+            e.style.color = 'var(--tetiary)';
+        });
+    
         const fromSelect = document.getElementById('from-select');
         const toSelect = document.getElementById('to-select');
         
         const fromValue = fromSelect.value;
         const toValue = toSelect.value;
-
+    
+        // Update active states and colors based on selections
         document.querySelectorAll('.info-slider-inner .items-box').forEach(item => {
             const itemText = item.querySelector('h4').textContent.trim();
             if (itemText === fromValue || itemText === toValue) {
                 item.classList.add('slider-active');
-                document.querySelectorAll('select option').forEach((e)=>{
-                    if(e.value === fromValue || e.value === toValue){
-                        e.style.color = 'rgb(168, 168, 168)'
+                document.querySelectorAll('select option').forEach((e) => {
+                    if (e.value === fromValue || e.value === toValue) {
+                        e.style.color = 'rgb(168, 168, 168)';
                     }
-                })
+                });
             }
         });
     };
-
+    
+    // Initialize select elements
     const fromSelect = document.getElementById('from-select');
     const toSelect = document.getElementById('to-select');
     
+    // Add change event listeners to selects
     fromSelect.addEventListener('change', updateSliderActive);
     toSelect.addEventListener('change', updateSliderActive);
-
+    
+    // Create ripple effect and handle selection logic
+    document.querySelectorAll('.items-box svg').forEach(svg => {
+        svg.addEventListener('click', function(e) {
+            // Handle ripple effect
+            const ripple = this.cloneNode(true);
+            ripple.classList.add('ripple');
+            
+            const parentBox = this.closest('.items-box');
+            const rect = this.getBoundingClientRect();
+            const parentRect = parentBox.getBoundingClientRect();
+            
+            ripple.style.position = 'absolute';
+            ripple.style.left = (rect.left - parentRect.left) + 'px';
+            ripple.style.top = (rect.top - parentRect.top) + 'px';
+            ripple.style.width = rect.width + 'px';
+            ripple.style.height = rect.height + 'px';
+            
+            parentBox.appendChild(ripple);
+            
+            ripple.addEventListener('animationend', function() {
+                ripple.remove();
+            });
+    
+            // Handle selection logic
+            const selectedText = parentBox.querySelector('h4').textContent.trim();
+            const currentFromValue = fromSelect.value;
+    
+            if (currentFromValue === '') {
+                // If 'from' is empty, set it
+                fromSelect.value = selectedText;
+            } else if (selectedText !== currentFromValue) {
+                // If clicking a different item, move current 'from' to 'to' and set new 'from'
+                toSelect.value = currentFromValue;
+                fromSelect.value = selectedText;
+            }
+    
+            // Update active states
+            updateSliderActive();
+        });
+    });
+    
+    // Initial update
     updateSliderActive();
 });
 
