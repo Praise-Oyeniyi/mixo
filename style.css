@@ -50,7 +50,6 @@ li, .logo svg{
     padding: .5rem .75rem;
     transition: .2s ease;
     width: fit-content;
-    letter-spacing: 0.05rem;
 }
 li:hover, .logo svg:hover{
     background-color: var(--secondary) !important;
@@ -65,6 +64,27 @@ li:hover, .logo svg:hover{
 .items-center{
     align-items: center;
 }
+.border{
+    padding: .5rem 1rem;
+    border: 2px solid var(--tetiary);
+}
+.smaller{
+    font-size: 1.875rem;
+    font-weight: 400;
+    text-align: center;
+}
+.text-center{
+    text-align: center;
+}
+.desk-hidden{
+    display: none;
+}
+
+
+
+
+
+
 
 /* search modal */
 .modal-open {
@@ -124,7 +144,6 @@ li:hover, .logo svg:hover{
     outline: none;
     font-size: .875rem;
     height: 1.5rem;
-    /* border-radius: 2px; */
     overflow: hidden;
 }
 
@@ -139,9 +158,10 @@ header{
 .header-outer{
     background-color: var(--primary);
     color: var(--tetiary);
-    padding: .5rem 0;
+    padding: .45rem 0 .3rem 0;
 }
 .header-inner{
+    padding: .5rem 0;
     width:90%;
     margin:0 auto;
     align-items: center;
@@ -153,13 +173,11 @@ header{
 .header-inner  nav ul{
     width: 50%;
     margin: 0 auto;
-    /* column-gap: .5rem; */
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 200;
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
-    letter-spacing: .01em;
 }
 
 
@@ -169,7 +187,7 @@ header{
 }
 .logo svg{
     position: relative;
-    height: 2.5rem;
+    height: 2.58rem;
     left: -1rem;
     fill: var(--tetiary) !important;
     color: var(--tetiary);
@@ -217,14 +235,15 @@ header{
     height: 1.3rem;
     right: 5rem;
     opacity: 0;
-    pointer-events: none;
     visibility: hidden;
     transition: .3s all ease-in;
     fill: var(--tetiary);   
 }
 .menu{
     width: fit-content;
+    position: relative;
     margin-left: auto;
+    right: -.75rem;
 }
 .menu:hover .sidebar, .sidebar:hover{
     right: -5rem;
@@ -246,6 +265,10 @@ nav{
     justify-content: center !important;
     align-items: center;
 }
+nav li{
+    font-size: 1.125rem;
+    font-weight: 500;
+}
 
 
 /* .sidebar */
@@ -253,7 +276,7 @@ nav{
     position: absolute;
     height: 100vh;
     width: 25vw;
-    top:2.2rem;
+    top:2.8rem;
     right: -100%;
     opacity: 0;
     visibility: hidden;
@@ -270,14 +293,14 @@ nav{
     
 }
 .sidebar .flex li{
-    margin: 1rem;
+    /* margin: 1rem; */
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 400;
 }
 .sidebar .social-icons{
     position: relative;
-    bottom: 8rem !important;
+    bottom: 5rem !important;
     left: 1rem;
 }
 .social-icons svg{
@@ -331,14 +354,17 @@ nav{
     max-width: fit-content;
     fill:var(--tetiary);
     margin: 1.5rem auto;
-    font-size: 1.8rem;
+    font-size: 1.75rem;
 }
 .f-linux{
-    width: 1.8rem;
+    width: 1.75rem;
+    height: 1.75rem;
 }
 .hero-icons svg {
     margin: 0 1rem;
     cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
 }
 .hero-section button{
     margin:0 auto;
@@ -356,7 +382,11 @@ nav{
     color: var(--primary);
     background-color: var(--secondary);
 }
-
+.btn-get{
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: "Nunito", sans-serif;
+}
 
 
 
@@ -406,6 +436,9 @@ nav{
 
 
 /* convert section */
+.mobile-small{
+    font-size: 3rem;
+}
 .info-outer{
     padding: 3rem 0;
     background:var(--primary);
@@ -415,7 +448,7 @@ nav{
     width: fit-content;
     overflow: hidden;
     margin: 0 auto;
-    column-gap: 2.5rem;
+    column-gap: 1rem;
 }
 .info-slider{
     height:12rem;
@@ -448,11 +481,11 @@ nav{
 }
 .items-box svg{
     fill: var(--tetiary) ;
-    width: 6rem;
+    width: 6.25rem;
     cursor: pointer;
     overflow: hidden;
 }
-.items-box h4, p{
+.items-box h4, p, .time{
     font-weight: 500;
     font-family: "Nunito", sans-serif;
 }
@@ -462,11 +495,17 @@ form select{
     outline:none;
 }
 form .form-item-go{
-    padding: 1rem 1.3rem;
+    padding: .875rem 1rem;
+}
+.form-item-go svg{
+    height: 1.3rem;
+    width: 1.3rem;
+    padding: 0 0 0 .5rem;
 }
 form svg {
     height: 2rem;
     fill: var(--tetiary);
+    margin: 0 .5rem;
 }
 button, .form-item{
     background-color: transparent;
@@ -574,6 +613,11 @@ button, .form-item{
     padding:.5rem 0;
     cursor: pointer;
 }
+.faq-item h4{
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+}
 .faq-item .faq-toggle{
     display:none;
     transition: .3s all linear;
@@ -582,7 +626,7 @@ button, .form-item{
     color: rgb(168, 168, 168);
     font-size: 1rem;
     font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 #faq-item li{
     padding: 0.3rem 0;
@@ -597,6 +641,10 @@ button, .form-item{
 .aside-two button{
     margin: 0 auto .8rem auto;
 }
+
+.btn-style-foot{
+    position: relative;
+}
 .btn-style-foot::after {
     background-color: var(--secondary);
     content: "";
@@ -608,6 +656,10 @@ button, .form-item{
     transform: rotate(35deg);
     animation: btnslide 1.5s linear 3s infinite;
     width: 50px;
+}
+.btn-style-foot:hover::after {
+    transform:rotate(35deg) translateX(500%);
+    transition: .1s all linear;
 }
 
 
@@ -629,7 +681,7 @@ button, .form-item{
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: 1.8rem !important;
+    margin-bottom: 1rem !important;
     margin: 0 auto;
 }
 .footer-outer{
@@ -702,41 +754,6 @@ button .f-icon{
     100% { width: 2.25rem; }
  }
 
-
-
-
-
-
-.border{
-    padding: .7rem 1.3rem;
-    border: 2px solid var(--tetiary);
-}
-
-
-.smaller{
-    font-size: 1.875rem;
-    font-weight: 400;
-    text-align: center;
-}
-
-
-
-
-
-.text-center{
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-.desk-hidden{
-    display: none;
-}
 
 
 
@@ -829,7 +846,7 @@ button .f-icon{
     
     /* header section */
     .header-outer{
-        padding: 1.3rem 0;
+        padding: .8rem 0;
     }
     .header-inner nav{
         display: none;
@@ -849,8 +866,7 @@ button .f-icon{
         padding-bottom: .2rem;
     }
     .hero-desc, .sub-head, .faq-question h4{
-        font-size: .875rem;
-        width: 90%;
+        width: 85%;
         font-weight: 100;
         line-height: 1.5rem;
     }
