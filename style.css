@@ -672,17 +672,16 @@ button, .form-item{
     align-items: flex-start; 
     font-size:1rem;
     margin: 4.5rem auto 3rem auto;
-    width: 45%;
+    width: 35%;
     justify-content: space-between;
     column-gap: 2rem;
     position: relative;
 }
 .footer-inner ul li{
-    font-size: 1rem;
+    font-size: 1.125rem;
     text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 1rem !important;
-    margin: 0 auto;
+    font-weight: 700;
+    margin: 0 auto .5rem auto;
 }
 .footer-outer{
     position: relative;
@@ -801,7 +800,7 @@ button .f-icon{
 
 
 
-
+/* slider animation */
 @keyframes slide {
     0% {
         transform: translateX(0);
@@ -810,10 +809,46 @@ button .f-icon{
         transform: translateX(-50%);
     }
 }
+
+/* get started animation */
 @keyframes btnslide {
     0% { transform: rotate(35deg) translateX(-100%); }
     100% { transform: rotate(35deg) translateX(500%); }
 }
+
+
+
+
+
+
+
+/* larger device than mobile phones */
+@media (min-width: 769px) and (max-width: 1200px) {
+    /* slideshow */
+    .slideshow-inner{
+        width: 100%;
+        max-width: 100%;
+    }
+    .slideshow-outer, .mixo-video-outer{
+        width: 98%;
+        column-gap:.5rem;
+    }
+    .slideshow-outer button svg{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+
+    /* footer */
+    .footer-inner{
+        width: 35%;
+    }
+
+}
+
+
+
+
 
 
 
@@ -846,7 +881,7 @@ button .f-icon{
     
     /* header section */
     .header-outer{
-        padding: .8rem 0;
+        padding: .25rem 0;
     }
     .header-inner nav{
         display: none;
@@ -1054,17 +1089,15 @@ button .f-icon{
         overflow: hidden;
     }
     .footer-inner {
-        margin: 3rem auto;
-        width: 90%;
+        margin: 3rem auto 6.5rem auto;
+        width: 82%;
         justify-content: space-between;
         column-gap: 2rem;
     }
     footer .footer-inner ul li{
         text-align: center;
         font-size: .75rem;
-        text-transform: uppercase;
         font-weight: 100;
-        margin-bottom: 1rem;
     } 
 
 
