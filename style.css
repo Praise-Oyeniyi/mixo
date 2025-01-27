@@ -707,7 +707,7 @@ button .f-icon{
     width: 1.5rem;
     color:var(--primary); ;
     fill: var(--primary);
-    margin:.5rem;
+    margin:.4rem;
 }
 .footer-icons button{
     background-color: var(--tetiary);
@@ -852,7 +852,8 @@ button .f-icon{
         display: none;
     }
     .logo svg{
-        height: 2rem;
+        /* height: 2rem; */
+        left: 0;
     }
     .menu-outer .active {
         right: -5rem !important;
@@ -880,6 +881,9 @@ button .f-icon{
         pointer-events: auto !important;
         width: fit-content;
         z-index: 9999999;
+    }
+    .menu{
+        right:0;
     }
 
 
