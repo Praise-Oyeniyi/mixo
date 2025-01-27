@@ -191,6 +191,7 @@ header{
     position: relative;
     height: 2.6rem;
     left: -1rem;
+    font-weight: 700;
     fill: var(--tetiary) !important;
     color: var(--tetiary);
     cursor: pointer;
@@ -237,7 +238,7 @@ header{
     top: 50%;
     transform: translateY(-50%);
     height: 1.3rem;
-    right: 5rem;
+    right: 7rem;
     opacity: 0;
     visibility: hidden;
     transition: .3s all ease-in;
@@ -287,7 +288,7 @@ nav li{
     visibility: hidden;
     display: none;
     background-color: var(--primary);
-    padding: 3rem 1rem;
+    padding: 4.5rem 1rem 3rem .875rem;
     transition: .3s all ease-in; 
 }
 
@@ -300,7 +301,7 @@ nav li{
 .sidebar .flex li{
     /* margin: 1rem; */
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 .sidebar .social-icons{
@@ -399,9 +400,10 @@ nav li{
     left: 0;
     background-color: var(--secondary);
 }
-.btn-style:hover{
+.form-item-go:hover{
     border: 2px solid var(--secondary);
 }
+
 .btn-get{
     font-size: 1.25rem;
     font-weight: 600;
