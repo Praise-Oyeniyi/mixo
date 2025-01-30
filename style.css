@@ -807,6 +807,7 @@ button .f-icon{
     right: 2.5rem;
     z-index: 99;
     display: none;
+    z-index: 99999999;
 }
 .live-chat-inner .lc-top {
     height: fit-content;
