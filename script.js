@@ -247,7 +247,7 @@ window.addEventListener('load', () => {
 
     if (savedColorIndex !== null) {
         currentColorIndex = parseInt(savedColorIndex);
-        document.body.style.background = backgroundColors[currentColorIndex];
+        // document.body.style.background = backgroundColors[currentColorIndex];
         
         if (savedPrimaryColor) {
             document.documentElement.style.setProperty('--body', backgroundColors[currentColorIndex]);
